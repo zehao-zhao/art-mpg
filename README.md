@@ -4,6 +4,8 @@ Linux CPU source package. Install CMake, Ninja, a C++17 compiler, OpenEXR develo
 
 ## Build
 
+Mitsuba's bundled third-party dependency sources and licenses are included under `512diffusion/mitsuba/ext/`. These dependencies are stored directly in this repository, so no separate submodule initialization is needed for them.
+
 ```sh
 cmake -S 512diffusion/mitsuba -B work/renderer -G Ninja -DCMAKE_BUILD_TYPE=Release -DMTS_ENABLE_PYTHON=OFF -DMTS_ENABLE_GUI=OFF -DMTS_ENABLE_EMBREE=OFF -DMTS_ENABLE_LTO=OFF
 cmake --build work/renderer --parallel 4
