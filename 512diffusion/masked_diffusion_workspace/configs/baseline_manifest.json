@@ -1,0 +1,141 @@
+{
+  "render_jobs": [
+    {
+      "id": "paper_living_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/living/living_reproduce.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "paper_lamp_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/lamp/lamp_reproduce.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "paper_plane_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/plane/plane_reproduce_fig07.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "paper_slabs_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/slabs/slabs_reproduce.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "paper_stone_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/stone/stone_reproduce.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "paper_pool_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/pool/pool_reproduce.xml",
+      "expected_integrator": "path_sms_ss"
+    },
+    {
+      "id": "paper_sphere_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/sphere/sphere_reproduce.xml",
+      "expected_integrator": "path_sms_ss"
+    },
+    {
+      "id": "paper_water_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/water/water_reproduce.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "paper_ring_and_slab_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/ring_and_slab/ring_and_slab_reproduce.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "paper_pillars_mpg",
+      "group": "paper_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "scenes/pillars/pillars_reproduce.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "resource_living_mpg",
+      "group": "resource_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "mitsuba/resources/data/scenes/living/living_reproduce.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "resource_lamp_mpg",
+      "group": "resource_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "mitsuba/resources/data/scenes/lamp/lamp_reproduce.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "resource_cbox_mpg",
+      "group": "resource_scene",
+      "method": "mpg",
+      "variant": "scalar_rgb",
+      "scene_path": "mitsuba/resources/data/scenes/cbox/cbox_mpg.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "resource_living_uniform",
+      "group": "resource_scene",
+      "method": "uniform",
+      "variant": "scalar_rgb",
+      "scene_path": "mitsuba/resources/data/scenes/living/living_uniform_256spp.xml",
+      "expected_integrator": "manifold_path_guiding"
+    },
+    {
+      "id": "resource_lamp_uniform",
+      "group": "resource_scene",
+      "method": "uniform",
+      "variant": "scalar_rgb",
+      "scene_path": "mitsuba/resources/data/scenes/lamp/lamp_uniform_256spp.xml",
+      "expected_integrator": "path"
+    }
+  ],
+  "training_jobs": [
+    {
+      "id": "simple_nn_demo",
+      "group": "learning_baseline",
+      "script_path": "mpg_workspace/scripts/04_train_learning_demo.py",
+      "args": [
+        "--epochs",
+        "50",
+        "--batch-size",
+        "256",
+        "--lr",
+        "1e-3",
+        "--device",
+        "cuda"
+      ]
+    }
+  ]
+}

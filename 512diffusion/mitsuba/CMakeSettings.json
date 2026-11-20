@@ -1,0 +1,49 @@
+﻿{
+  "configurations": [
+    {
+      "name": "x64-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${projectDir}/out/build/${name}",
+      "installRoot": "${projectDir}/out/install/${name}",
+      "cacheVariables": {
+        "CMAKE_POLICY_VERSION_MINIMUM": "3.10",
+        "MITSUBA_VARIANTS": "scalar_rgb",
+        "MTS_BUILD_DOCS": "OFF",
+        "MTS_ENABLE_DOCS": "OFF",
+        "BUILD_DOCS": "OFF",
+        "CMAKE_C_COMPILER": "F:/Microsoft Visual Studio Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe",
+        "CMAKE_CXX_COMPILER": "F:/Microsoft Visual Studio Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe",
+        "CMAKE_SYSTEM_NAME": "Windows",
+        "CMAKE_SYSTEM_VERSION": "10.0",
+        "CMAKE_GENERATOR_TOOLSET": "v141",
+        "CMAKE_WINDOWS_KITS_PATH": "C:/Program Files (x86)/Windows Kits/10"
+      },
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": ""
+    },
+    {
+      "name": "x64-Release",
+      "generator": "Ninja",
+      "configurationType": "RelWithDebInfo",
+      "buildRoot": "${projectDir}/out/build/${name}",
+      "installRoot": "${projectDir}/out/install/${name}",
+      "cacheVariables": {
+        "CMAKE_POLICY_VERSION_MINIMUM": "3.10",
+        "MITSUBA_VARIANTS": "scalar_rgb",
+        "MTS_BUILD_DOCS": "OFF",
+        "MTS_ENABLE_DOCS": "OFF",
+        "BUILD_DOCS": "OFF",
+        "CMAKE_C_COMPILER": "F:/Microsoft Visual Studio Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe",
+        "CMAKE_CXX_COMPILER": "F:/Microsoft Visual Studio Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe",
+        "CMAKE_SYSTEM_NAME": "Windows",
+        "CMAKE_SYSTEM_VERSION": "10.0",
+        "CMAKE_GENERATOR_TOOLSET": "v141",
+        "CMAKE_WINDOWS_KITS_PATH": "C:/Program Files (x86)/Windows Kits/10"
+      },
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": ""
+    }
+  ]
+}

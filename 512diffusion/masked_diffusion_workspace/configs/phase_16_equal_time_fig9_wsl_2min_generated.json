@@ -1,0 +1,53 @@
+{
+  "profile_id": "wsl_linux",
+  "job_ids": [
+    "paper_lamp_mpg",
+    "paper_slabs_mpg"
+  ],
+  "width": 128,
+  "height": 128,
+  "crop_width": 128,
+  "crop_height": 128,
+  "reference_sample_count": 512,
+  "compare_sample_count": 128,
+  "samples_per_pass": 1,
+  "threads": 4,
+  "seed": 42,
+  "mpg_train_budget": 0.5,
+  "mpg_train_fusion": true,
+  "output_dir": "results/phase_16_equal_time_fig9_wsl_2min",
+  "methods": [
+    "path_reference",
+    "pt",
+    "ppg",
+    "vapg",
+    "vmmpg",
+    "sms",
+    "sms_star",
+    "mpg",
+    "masked_diffusion"
+  ],
+  "runtime_model_path": "results/phase_12_runtime_export/masked_diffusion_runtime.txt",
+  "runtime_model_paths": {
+    "paper_lamp_mpg": "results/phase_12_runtime_export_lamp_per_seed/masked_diffusion_runtime.txt"
+  },
+  "scene_method_compare_sample_counts": {
+    "paper_lamp|pt": 4853,
+    "paper_lamp|ppg": 3796,
+    "paper_lamp|vapg": 3818,
+    "paper_lamp|vmmpg": 3442,
+    "paper_lamp|sms": 4290,
+    "paper_lamp|sms_star": 4269,
+    "paper_lamp|mpg": 3929,
+    "paper_lamp|masked_diffusion": 804,
+    "paper_slabs|pt": 11079,
+    "paper_slabs|ppg": 9802,
+    "paper_slabs|vapg": 9721,
+    "paper_slabs|vmmpg": 9100,
+    "paper_slabs|sms": 3295,
+    "paper_slabs|sms_star": 5058,
+    "paper_slabs|mpg": 4353,
+    "paper_slabs|masked_diffusion": 734
+  },
+  "time_budget_seconds": 120.0
+}

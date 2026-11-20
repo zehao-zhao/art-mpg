@@ -1,0 +1,27 @@
+{
+    "profile_id":  "linux_native",
+    "job_ids":  [
+                    "paper_stone_mpg"
+                ],
+    "seed_ids":  [
+                     8001,
+                     8002,
+                     8003,
+                     8004,
+                     8005,
+                     8006,
+                     8007,
+                     8008
+                 ],
+    "width":  64,
+    "height":  64,
+    "crop_width":  64,
+    "crop_height":  64,
+    "sample_count":  999999,
+    "samples_per_pass":  1,
+    "threads":  1,
+    "timeout_seconds":  6,
+    "train_budget":  3,
+    "train_fusion":  true,
+    "guided":  true
+}

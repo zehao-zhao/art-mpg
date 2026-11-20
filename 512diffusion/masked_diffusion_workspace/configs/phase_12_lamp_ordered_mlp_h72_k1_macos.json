@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_lamp_k1_macos_20260901/phase10/mlp_h72_k1/best_general.pt",
+  "output_dir": "results/ordered_absorbing_lamp_k1_macos_20260901/phase12/mlp_h72_k1",
+  "output_name": "ordered_diffusion_mlp_h72_k1_runtime.txt"
+}

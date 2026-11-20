@@ -1,0 +1,23 @@
+{
+  "replay_paths": [
+    "results/phase_09_export/replay/paper_pillars_mpg.jsonl"
+  ],
+  "masked_diffusion_checkpoint": "results/phase_10_masked_diffusion_pillars/best_pillars.pt",
+  "output_dir": "results/phase_11_compare_models_pillars",
+  "seed": 42,
+  "batch_size": 4,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 4,
+  "device": "auto",
+  "direction_loss_weight": 0.5,
+  "diffusion_steps": 1,
+  "simple_baseline": {
+    "hidden_dim": 128,
+    "depth": 3,
+    "dropout": 0.1,
+    "epochs": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001
+  }
+}

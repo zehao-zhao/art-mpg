@@ -1,0 +1,27 @@
+{
+    "profile_id":  "linux_native",
+    "job_ids":  [
+                    "paper_sphere_mpg"
+                ],
+    "seed_ids":  [
+                     1001,
+                     1002,
+                     1003,
+                     1004,
+                     1005,
+                     1006,
+                     1007,
+                     1008
+                 ],
+    "width":  64,
+    "height":  64,
+    "crop_width":  64,
+    "crop_height":  64,
+    "sample_count":  999999,
+    "samples_per_pass":  1,
+    "threads":  1,
+    "timeout_seconds":  6.0,
+    "train_budget":  3.0,
+    "train_fusion":  true,
+    "guided":  true
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "protocol_id": "phase_19_diffusion_mlp_equal_spp_stability_v1",
+  "default_profile_id": "linux_native",
+  "candidate_method": "ordered_diffusion_mlp_h72_k4",
+  "seeds": [
+    104729,
+    130363,
+    155921
+  ],
+  "bounce_alphas": [
+    0.0,
+    0.25
+  ],
+  "kappa_scales": [
+    0.5,
+    1.0
+  ],
+  "control": {
+    "bounce_alpha": 0.0,
+    "kappa_scale": 1.0
+  },
+  "selection": {
+    "maximum_geometric_mean_mse_ratio_to_control": 1.25,
+    "order": [
+      "eligible_desc",
+      "worst_pixel_top_1pct_share_asc",
+      "geometric_mean_mse_ratio_to_control_asc",
+      "mean_newton_fail_per_seed_started_asc",
+      "bounce_alpha_asc",
+      "kappa_scale_asc"
+    ]
+  },
+  "render": {
+    "width": 64,
+    "height": 64,
+    "crop_width": 64,
+    "crop_height": 64,
+    "candidate_spp": 8,
+    "samples_per_pass": 1,
+    "threads": 4,
+    "diffusion_steps": 10,
+    "learned_direction_flip_to_receiver_hemisphere": false,
+    "learned_proposal_max_trials": 2048,
+    "learned_proposal_inv_prob_clamp": 512.0,
+    "learned_proposal_contribution_clamp": 32.0,
+    "time_budget_seconds_per_scene": 300
+  },
+  "output_root": "results/phase_19_diffusion_mlp_equal_spp_stability_sweep/server_ready",
+  "scenes": {
+    "paper_pillars": {
+      "job_id": "paper_pillars_mpg",
+      "reference": {
+        "path": "linux_server/results/expanded_10scene_baselines_20260903_v1/stages/references_workers_20/jobs/reference__pillars__r314159/attempt_001/phase13/run_20260903_194145/outputs/paper_pillars.path_reference.exr",
+        "sha256": "be49f07237e437f1c3d84044b551f6158ea1617d24b7493fa84a54da376a2a27",
+        "sample_count": 32768,
+        "sampler_seed": 314159
+      },
+      "runtime_models": {
+        "104729": {
+          "path": "results/ten_scene_model_tuning_20260903_v2/execution/final/final_pillars_ordered_mlp_current_seed104729_export-9aa7685561fc/attempt_001/artifacts/ordered_mlp_current_runtime.txt",
+          "sha256": "9406f64f4bc1645a9280e26eb8f320e343f8369630a4566a79a55e13bcb74472"
+        },
+        "130363": {
+          "path": "results/ten_scene_model_tuning_20260903_v2/execution/final/final_pillars_ordered_mlp_current_seed130363_export-69e077b9b97e/attempt_001/artifacts/ordered_mlp_current_runtime.txt",
+          "sha256": "179205697c2234c50b2c3a97f39a8548546b480d0421d45ba80863c4b57d0430"
+        },
+        "155921": {
+          "path": "results/ten_scene_model_tuning_20260903_v2/execution/final/final_pillars_ordered_mlp_current_seed155921_export-0e5229979bec/attempt_001/artifacts/ordered_mlp_current_runtime.txt",
+          "sha256": "d2555c6fa5bea8b5af33fa4358df7998a51f6816f5b7bdf49c9004d2b292ab8a"
+        }
+      }
+    },
+    "paper_pool": {
+      "job_id": "paper_pool_mpg",
+      "reference": {
+        "path": "linux_server/results/expanded_10scene_baselines_20260903_v1/stages/references_workers_20/jobs/reference__pool__r314159/attempt_001/phase13/run_20260903_194145/outputs/paper_pool.path_reference.exr",
+        "sha256": "3b49a1b5df09e92ecb44cf3a9ffead3987ad4471cef74b11454f978c6bd80723",
+        "sample_count": 32768,
+        "sampler_seed": 314159
+      },
+      "runtime_models": {
+        "104729": {
+          "path": "results/ten_scene_model_tuning_20260903_v2/execution/final/final_pool_ordered_mlp_current_seed104729_export-dac845ef72ac/attempt_001/artifacts/ordered_mlp_current_runtime.txt",
+          "sha256": "bdc2bcbc80ac5bb7219c05f159605bf598b40e539f908257edc6fa2fba955b63"
+        },
+        "130363": {
+          "path": "results/ten_scene_model_tuning_20260903_v2/execution/final/final_pool_ordered_mlp_current_seed130363_export-365807cbfbc2/attempt_001/artifacts/ordered_mlp_current_runtime.txt",
+          "sha256": "8a0c6451e7e862f589bb48bd00e1b29ee9dfda286a079dc5be5e02fe28c882a2"
+        },
+        "155921": {
+          "path": "results/ten_scene_model_tuning_20260903_v2/execution/final/final_pool_ordered_mlp_current_seed155921_export-3b785f7b51e5/attempt_001/artifacts/ordered_mlp_current_runtime.txt",
+          "sha256": "2061b87480108105975834004e99195600785b2d6d6030b7456c753a0e7cff38"
+        }
+      }
+    }
+  }
+}

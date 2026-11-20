@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/phase_10_masked_diffusion_paper_lamp/best_paper_lamp.pt",
+  "output_dir": "results/phase_12_runtime_export_paper_lamp",
+  "output_name": "masked_diffusion_runtime.txt"
+}

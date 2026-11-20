@@ -1,0 +1,32 @@
+{
+  "cornell_glass|npm_adapted|104729": {
+    "path": "external_inputs/models/equal_time/cornell_glass/npm_adapted_seed104729.txt",
+    "sha256": "63469fc58a70175b82e7f45b916459536f95ce0d7cdf5db0c335787b1b5bc90d",
+    "included": false
+  },
+  "living|npm_adapted|104729": {
+    "path": "external_inputs/models/equal_time/living/npm_adapted_seed104729.txt",
+    "sha256": "34316bca0e1110035ef421688f314d2c4d4798fe4656a48ba07913870f1203b8",
+    "included": false
+  },
+  "pool|npm_adapted|104729": {
+    "path": "external_inputs/models/equal_time/pool/npm_adapted_seed104729.txt",
+    "sha256": "4fca98cda5fe52adb5e03b315a8eaeb882443ec7c0bc9c33a3c5a4ad6f8756b7",
+    "included": false
+  },
+  "slabs|npm_adapted|104729": {
+    "path": "external_inputs/models/equal_time/slabs/npm_adapted_seed104729.txt",
+    "sha256": "3c18d792d66afa33ef0d8e5f13a54d7d1a736431cbb679114c2121cdd0949435",
+    "included": false
+  },
+  "stone|npm_adapted|104729": {
+    "path": "external_inputs/models/equal_time/stone/npm_adapted_seed104729.txt",
+    "sha256": "1ffab2755d963802eb91dc4bdad2b1956da2d1fa587c0b73f6f04c22d7530b9c",
+    "included": false
+  },
+  "water|npm_adapted|104729": {
+    "path": "external_inputs/models/equal_time/water/npm_adapted_seed104729.txt",
+    "sha256": "62525b57dfa7f8fd90c4d11f550046a06abb2db5adc4779f206739dc8eef51ab",
+    "included": false
+  }
+}

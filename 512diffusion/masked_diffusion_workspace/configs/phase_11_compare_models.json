@@ -1,0 +1,26 @@
+{
+  "replay_paths": [
+    "results/phase_09_export/replay/paper_living_mpg.jsonl",
+    "results/phase_09_export/replay/paper_lamp_mpg.jsonl",
+    "results/phase_09_export/replay/resource_living_mpg.jsonl",
+    "results/phase_09_export/replay/resource_lamp_mpg.jsonl"
+  ],
+  "masked_diffusion_checkpoint": "results/phase_10_masked_diffusion/best_general.pt",
+  "output_dir": "results/phase_11_compare_models",
+  "seed": 42,
+  "batch_size": 8,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 4,
+  "device": "auto",
+  "direction_loss_weight": 0.5,
+  "diffusion_steps": 1,
+  "simple_baseline": {
+    "hidden_dim": 128,
+    "depth": 3,
+    "dropout": 0.1,
+    "epochs": 128,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001
+  }
+}

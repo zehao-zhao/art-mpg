@@ -1,0 +1,10 @@
+{
+  "source_summary_path": "results/phase_13_sms_fig9_hd_wsl/run_20260324_173516/benchmark_summary.json",
+  "output_config_path": "configs/phase_16_equal_time_fig9_wsl_2min_generated.json",
+  "output_dir": "results/phase_16_equal_time_fig9_wsl_2min",
+  "target_seconds": 120.0,
+  "scale_safety": 0.95,
+  "reference_sample_count": 512,
+  "min_sample_count": 1,
+  "max_sample_count": 2000000
+}

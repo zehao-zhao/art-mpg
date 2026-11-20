@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/phase_10_masked_diffusion_pool/best_pool.pt",
+  "output_dir": "results/phase_12_runtime_export_pool",
+  "output_name": "masked_diffusion_runtime.txt"
+}

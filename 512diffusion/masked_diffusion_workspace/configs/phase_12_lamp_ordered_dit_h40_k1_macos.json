@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_lamp_dit_macos_20260901/phase10/dit_h40_k1/best_general.pt",
+  "output_dir": "results/ordered_absorbing_lamp_dit_macos_20260901/phase12/dit_h40_k1",
+  "output_name": "ordered_diffusion_dit_runtime.txt"
+}

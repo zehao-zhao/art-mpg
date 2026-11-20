@@ -1,0 +1,10 @@
+{
+  "source_summary_path": "results/phase_16_equal_time_fig9_windows/run_20260325_114051/benchmark_summary.json",
+  "output_config_path": "configs/phase_16_equal_time_fig9_windows_round2_generated.json",
+  "output_dir": "results/phase_16_equal_time_fig9_windows_round2",
+  "target_seconds": 15.0,
+  "scale_safety": 0.95,
+  "reference_sample_count": 512,
+  "min_sample_count": 1,
+  "max_sample_count": 200000
+}

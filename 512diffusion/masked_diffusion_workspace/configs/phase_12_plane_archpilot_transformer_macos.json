@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/architecture_pilot_macos_20260901/phase10/diffusion_transformer/best_general.pt",
+  "output_dir": "results/architecture_pilot_macos_20260901/phase12/diffusion_transformer",
+  "output_name": "diffusion_transformer_runtime.txt"
+}

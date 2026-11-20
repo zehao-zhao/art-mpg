@@ -1,0 +1,1430 @@
+{
+  "code_provenance": {
+    "scripts/generate_fresh_confirmatory_model_configs.py": "43d70d1f552f29646bebc890c8b05616d1d2fbf6411dd94beccfbcbf8e541ec5",
+    "scripts/phase_10_train_masked_diffusion.py": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+    "scripts/phase_11_compare_guidance_models.py": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+    "scripts/phase_12_export_runtime_model.py": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+    "scripts/run_fresh_confirmatory_model_artifacts.py": "f5f01df0a1bea444a81d0bc318f01d2531352e387f2744a2cf4e6620ee86927b",
+    "src/masked_diffusion_mpg/__init__.py": "e076998c0ea383627793fb03337a87950cab1d0b47e21c58387503fbf90235f3",
+    "src/masked_diffusion_mpg/comparison.py": "910f804cd668c769ee1bdba9bc8161b0c6578c44b7bd71f41b45c0a6fe91c481",
+    "src/masked_diffusion_mpg/data_contract.py": "533c00d36421e2f84a3f3d35e8f3b0f1041dac4322e41b07157948f183a9789d",
+    "src/masked_diffusion_mpg/dataset.py": "e9a564c1160ae761cb49e08875fc72a362a8b433f4de5cfcd3afe833decdd24a",
+    "src/masked_diffusion_mpg/model.py": "2daefd242132477d19a14b19be932d8d2e2daa2f1ac13ed70c4f78dd2194c53f",
+    "src/masked_diffusion_mpg/runtime_export.py": "eb2871a62f897c322d8797d9c5f0397e5f00d3abdd7335af405fc27284b0527d",
+    "src/masked_diffusion_mpg/training.py": "bae88e8777af1dd32bc5be82d7be5182bbf9a603f7749d86a9663e1df05a7e8f"
+  },
+  "entry_points": {
+    "ordered_training": "scripts/phase_10_train_masked_diffusion.py",
+    "runtime_export": "scripts/phase_12_export_runtime_model.py",
+    "simple_training": "scripts/phase_11_compare_guidance_models.py"
+  },
+  "estimated_training_cost": {
+    "ordered_minutes_range": [
+      45.9885666752,
+      132.0984094096
+    ],
+    "ordered_optimizer_steps": 68160,
+    "ordered_seconds_per_step_observed_range": [
+      0.0404828932,
+      0.1162838111
+    ],
+    "planning_envelope": "1.2-3.0 hours including serial orchestration/export overhead",
+    "simple_minutes_range": [
+      10.6371275864,
+      11.311235087039998
+    ],
+    "simple_optimizer_steps": 68160,
+    "simple_seconds_per_step_observed_range": [
+      0.00936366865,
+      0.00995707314
+    ],
+    "total_minutes_range": [
+      56.625694261599996,
+      143.40964449664
+    ],
+    "total_optimizer_steps": 136320
+  },
+  "frozen_date": "2026-09-01",
+  "frozen_recipe": {
+    "common": {
+      "batch_size": 16,
+      "epochs": 32,
+      "grad_clip_norm": 0.5,
+      "learning_rate": 0.001,
+      "loss_weighting": "1 + log1p(max(replay_weight, 0))",
+      "max_records": null,
+      "num_workers": 0,
+      "val_fraction": 0.25,
+      "weight_decay": 0.0001
+    },
+    "ordered": {
+      "backbone": "mlp",
+      "depth": 3,
+      "direction_space": "s2",
+      "discrete_diffusion_mode": "ordered_absorbing",
+      "dropout": 0.1,
+      "epochs": 32,
+      "hidden_dim": 72,
+      "time_embedding_dim": 16,
+      "token_embedding_dim": 24,
+      "vmf_components": 4
+    },
+    "simple": {
+      "backbone": "plain_mlp",
+      "depth": 4,
+      "dropout": 0.1,
+      "epochs": 32,
+      "hidden_dim": 126,
+      "probabilistic_direction": true,
+      "vmf_components": 4
+    }
+  },
+  "generation_state": "prepared_only_not_executed",
+  "generator": "scripts/generate_fresh_confirmatory_model_configs.py",
+  "jobs": [
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_plane_seed104729_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "11205e227e741dc4ea469b17b91b3c953ac210b98113885f7d3dd4b835480be2",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed104729/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed104729_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "plane",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_plane_seed104729_simple_h126_k4_e32_macos.json",
+      "config_sha256": "8f69ad995bf93d2a057c0a165319cf2548028c9857cbca8fb0db5cce6baa86f3",
+      "dependencies": [
+        "plane_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed104729/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed104729_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "plane",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed104729_ordered_h72_k4_macos.json",
+      "config_sha256": "097e2942cbf87e9e6faf9f078ecbe6ad70a7cba006741eb87010d5b95940cf54",
+      "dependencies": [
+        "plane_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed104729/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/plane/seed104729/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed104729_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "plane",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed104729_simple_h126_k4_macos.json",
+      "config_sha256": "4a9d13a8d00a3e67878613276ac8ec421dd294428ba7f8b220f1cc4c5dc0518b",
+      "dependencies": [
+        "plane_seed104729_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed104729/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/plane/seed104729/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed104729_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "plane",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_plane_seed130363_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "e7f8d6fd19375434d7bb4252dddeff8f32be62f6bebaed35bd7d24b63f0af916",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed130363/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed130363_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "plane",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_plane_seed130363_simple_h126_k4_e32_macos.json",
+      "config_sha256": "247d259f5bb7bc462cfdca3e2f375bddd34e8b2b2f5c793e2c70ec66f30a2b7f",
+      "dependencies": [
+        "plane_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed130363/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed130363_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "plane",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed130363_ordered_h72_k4_macos.json",
+      "config_sha256": "0a877b22f59fe8f3e939a43ebb5d5017009277c13f6b64016b25c36fbd7befca",
+      "dependencies": [
+        "plane_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed130363/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/plane/seed130363/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed130363_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "plane",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed130363_simple_h126_k4_macos.json",
+      "config_sha256": "c094bc8febe86436bd0105f92213fe9e8395c0f2864e764e49a5525cd27a25c9",
+      "dependencies": [
+        "plane_seed130363_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed130363/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/plane/seed130363/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed130363_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "plane",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_plane_seed155921_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "ea7cec4dff755e3f86a8c310d4090abf6f3b38a49ed0313aae3d1e89ad11edbc",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed155921/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed155921_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "plane",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_plane_seed155921_simple_h126_k4_e32_macos.json",
+      "config_sha256": "b9e6e791b13f6e5bc1273921b5055e0b9dfd21e6c35fa14658f96fddd9f97e58",
+      "dependencies": [
+        "plane_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed155921/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed155921_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "plane",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed155921_ordered_h72_k4_macos.json",
+      "config_sha256": "e15b5b3dfc31e609a1c078506d866e3f1df98f1fd56134a337680197033eb795",
+      "dependencies": [
+        "plane_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed155921/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/plane/seed155921/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed155921_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "plane",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed155921_simple_h126_k4_macos.json",
+      "config_sha256": "ac4cbabccace816db8f96b85333b1471101be19b9320292b1c161b09bf011435",
+      "dependencies": [
+        "plane_seed155921_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/plane/seed155921/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/plane/seed155921/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "plane_seed155921_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "plane",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_stone_seed104729_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "3552acfc2a5e8055f6be1830ed05d79351aabdd1c7646bc55bd504d68922ab33",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed104729/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed104729_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "stone",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_stone_seed104729_simple_h126_k4_e32_macos.json",
+      "config_sha256": "8f63b89eb973a1da66f68bd1cc1fc47d643f58f40fdfd6b52917a519658c85aa",
+      "dependencies": [
+        "stone_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed104729/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed104729_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "stone",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed104729_ordered_h72_k4_macos.json",
+      "config_sha256": "d36887450d06eef842f278d0b89479bb6a54bf72bfd964130232adbe65101d14",
+      "dependencies": [
+        "stone_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed104729/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/stone/seed104729/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed104729_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "stone",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed104729_simple_h126_k4_macos.json",
+      "config_sha256": "4d9979040c517580baaa028beacc7728a2331f34b5e0d8d48a7862c5e6001471",
+      "dependencies": [
+        "stone_seed104729_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed104729/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/stone/seed104729/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed104729_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "stone",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_stone_seed130363_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "e656490e194f195cd7aafd383da54ef2110d2ba31b948e67f6cb755247f91318",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed130363/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed130363_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "stone",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_stone_seed130363_simple_h126_k4_e32_macos.json",
+      "config_sha256": "711cc3df0cad98e33cec0b703c8e7613a29a46301b7d25d566b5c19b431d373d",
+      "dependencies": [
+        "stone_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed130363/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed130363_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "stone",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed130363_ordered_h72_k4_macos.json",
+      "config_sha256": "4b95bfe90e2633adc7e5e76683ae8a3155e22650dff66db1d29d3ed62188d91f",
+      "dependencies": [
+        "stone_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed130363/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/stone/seed130363/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed130363_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "stone",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed130363_simple_h126_k4_macos.json",
+      "config_sha256": "67606f048d25ee0917b95576af97c6ce026e1069c393e2781370ded33c3f1117",
+      "dependencies": [
+        "stone_seed130363_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed130363/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/stone/seed130363/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed130363_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "stone",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_stone_seed155921_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "d8973d3b050b3662e27fd9d20d77c6c6a86f2c5e6d23dc58dba09cec84c9da47",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed155921/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed155921_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "stone",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_stone_seed155921_simple_h126_k4_e32_macos.json",
+      "config_sha256": "8b6136e10e5482a9a6d576789bac022aa3e0535a084cce96117d2b5bcd5f177b",
+      "dependencies": [
+        "stone_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed155921/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed155921_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "stone",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed155921_ordered_h72_k4_macos.json",
+      "config_sha256": "d0271b8b9258f831b86416b0fbb93b6d5f778eb80069b9ec6c3299d83ad3f973",
+      "dependencies": [
+        "stone_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed155921/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/stone/seed155921/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed155921_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "stone",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed155921_simple_h126_k4_macos.json",
+      "config_sha256": "c85082ae35c92297d805c243bf6169c995a65b20611911645a4b8b967da1e948",
+      "dependencies": [
+        "stone_seed155921_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/stone/seed155921/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/stone/seed155921/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "stone_seed155921_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "stone",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_sphere_seed104729_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "ed24e7af2e50b01b9ca5f21d86ee9ac46577eb63b6a689f15528af3ea613302d",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed104729/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed104729_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "sphere",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_sphere_seed104729_simple_h126_k4_e32_macos.json",
+      "config_sha256": "b5b8aff6c848c46bbb15de42f7f67bf3bc098e73e6e527dc7884581a4f7e2c87",
+      "dependencies": [
+        "sphere_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed104729/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed104729_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "sphere",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed104729_ordered_h72_k4_macos.json",
+      "config_sha256": "b7ca0f20f966c58e748638afda5a75e6eabf030d501b17333ab1cfcb8048fec5",
+      "dependencies": [
+        "sphere_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed104729/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/sphere/seed104729/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed104729_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "sphere",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed104729_simple_h126_k4_macos.json",
+      "config_sha256": "f023726c8ef393fc439f80c23b9fa31c04d333b27afb94a65941b65cfbed1dc6",
+      "dependencies": [
+        "sphere_seed104729_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed104729/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/sphere/seed104729/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed104729_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "sphere",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_sphere_seed130363_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "611cd17065bc9cacac29c9beb37cb2acada8cfb3537efbb4b5bd820e23035c0a",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed130363/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed130363_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "sphere",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_sphere_seed130363_simple_h126_k4_e32_macos.json",
+      "config_sha256": "eb951a275ecacdc910c0806dcb186b3bd8d70a9a34f496f4a57202b783e42aed",
+      "dependencies": [
+        "sphere_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed130363/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed130363_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "sphere",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed130363_ordered_h72_k4_macos.json",
+      "config_sha256": "37fb49da516ffd38658c6582addc6baaac79748f703b94c9321c49d0de11531a",
+      "dependencies": [
+        "sphere_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed130363/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/sphere/seed130363/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed130363_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "sphere",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed130363_simple_h126_k4_macos.json",
+      "config_sha256": "4144d2c2d10598055824e13b22f9b8e1ff9e34e7df6baaa83800722002f99a68",
+      "dependencies": [
+        "sphere_seed130363_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed130363/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/sphere/seed130363/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed130363_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "sphere",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_sphere_seed155921_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "8ea5291b345dbbfb180956cccf248aeb479338a127575fe7136be8dc49cc87a2",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed155921/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed155921_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "sphere",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_sphere_seed155921_simple_h126_k4_e32_macos.json",
+      "config_sha256": "e1e5410baee08b032c7199c62bd99e072cdd053d8fd5294b4c5fe8ff43c66751",
+      "dependencies": [
+        "sphere_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed155921/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed155921_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "sphere",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed155921_ordered_h72_k4_macos.json",
+      "config_sha256": "4fc724905f789dd8af293070577d0688d9738142c43da43ee7977f22d65e310c",
+      "dependencies": [
+        "sphere_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed155921/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/sphere/seed155921/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed155921_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "sphere",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed155921_simple_h126_k4_macos.json",
+      "config_sha256": "ed603d3318b2a5d07c4d66264e8ef12d032609f6a157dfc7b51646a5560197d2",
+      "dependencies": [
+        "sphere_seed155921_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/sphere/seed155921/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/sphere/seed155921/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "sphere_seed155921_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "sphere",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_pool_seed104729_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "f95d3b42797707f87f5e5e2bbbbdabb596bf61a3a1f6fd950909681e09f2bc4c",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed104729/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed104729_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "pool",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_pool_seed104729_simple_h126_k4_e32_macos.json",
+      "config_sha256": "c62e8ecd583611d650e8de384fae17f47fbab873dd9c9a0755ae97ed5eb9d043",
+      "dependencies": [
+        "pool_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed104729/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed104729_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "pool",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed104729_ordered_h72_k4_macos.json",
+      "config_sha256": "fb32f143ec4948187b77c6b738cc0f88e4829ba290b5b8196e5aed22b50b9480",
+      "dependencies": [
+        "pool_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed104729/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/pool/seed104729/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed104729_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "pool",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed104729_simple_h126_k4_macos.json",
+      "config_sha256": "7b1059711801e28e42f98a546f23d459841bd51fc8c32629c30eab89029979a2",
+      "dependencies": [
+        "pool_seed104729_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed104729/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/pool/seed104729/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed104729_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "pool",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_pool_seed130363_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "9053b64b5c08076b9e6672f3823dac0b9fd454248e44a7dafa745ca775234a4c",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed130363/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed130363_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "pool",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_pool_seed130363_simple_h126_k4_e32_macos.json",
+      "config_sha256": "7aec32b21a67836e6e6bd27cadd1bac933e8dec6aef4b01a8cdefc2b194c03ff",
+      "dependencies": [
+        "pool_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed130363/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed130363_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "pool",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed130363_ordered_h72_k4_macos.json",
+      "config_sha256": "02f7ee7ff96e32aae7a4895ed06f11e8abce17c16cba993923c1585d1b79cd9d",
+      "dependencies": [
+        "pool_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed130363/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/pool/seed130363/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed130363_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "pool",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed130363_simple_h126_k4_macos.json",
+      "config_sha256": "4c9704afc164ce25abff5203f76103d5569c12061d0f72f5e82af0da8e721e71",
+      "dependencies": [
+        "pool_seed130363_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed130363/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/pool/seed130363/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed130363_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "pool",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_pool_seed155921_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "7dcca836d9bb7bf00f59e940d892ca46a83a7544ae937e4190911c27504ff4c2",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed155921/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed155921_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "pool",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_pool_seed155921_simple_h126_k4_e32_macos.json",
+      "config_sha256": "647b475e2cfe3b17df66875e452151ea1837e01309011590c5d8814a0462289a",
+      "dependencies": [
+        "pool_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed155921/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed155921_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "pool",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed155921_ordered_h72_k4_macos.json",
+      "config_sha256": "ef0fe9e504a316d6d2af33049f3efb66c4d3caf659bea811eaf63be28450fdad",
+      "dependencies": [
+        "pool_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed155921/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/pool/seed155921/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed155921_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "pool",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed155921_simple_h126_k4_macos.json",
+      "config_sha256": "a46ff310f0be3020d3f4f98e8085d9c08b18a1de23a7b22ee6a0a6d7986d2e6b",
+      "dependencies": [
+        "pool_seed155921_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/pool/seed155921/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/pool/seed155921/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "pool_seed155921_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "pool",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_living_seed104729_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "e9dbc93489fcd4c1963409c1298e0fbdceebf46c98a7b577ea15d69207216180",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed104729/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed104729_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "living",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_living_seed104729_simple_h126_k4_e32_macos.json",
+      "config_sha256": "991103192170d332299def132a868c0f5c6fe4c8ad0598f9358909468c8206eb",
+      "dependencies": [
+        "living_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed104729/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed104729_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "living",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed104729_ordered_h72_k4_macos.json",
+      "config_sha256": "a228c443f2716c30279145fc4475d4d53c94a9105073d3968894495a26857e6d",
+      "dependencies": [
+        "living_seed104729_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed104729/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/living/seed104729/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed104729_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "living",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed104729_simple_h126_k4_macos.json",
+      "config_sha256": "f00465a31e86851e637e63d578e842c4a4510748ae44f7e3db88b9ccedf77126",
+      "dependencies": [
+        "living_seed104729_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed104729/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/living/seed104729/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed104729_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "living",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 104729
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_living_seed130363_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "7c54b071a9ca26d53137d6215d85db67c74faee4203a6aadc14f9d4dd24d3087",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed130363/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed130363_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "living",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_living_seed130363_simple_h126_k4_e32_macos.json",
+      "config_sha256": "c1e882cbf317c4eca9706fe16755b6ba81dd39ed69973de854bc3de3103857d6",
+      "dependencies": [
+        "living_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed130363/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed130363_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "living",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed130363_ordered_h72_k4_macos.json",
+      "config_sha256": "d143e53f6b87d1c2586ff512738df9e66a971001a65e75c81624bcd0598dd748",
+      "dependencies": [
+        "living_seed130363_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed130363/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/living/seed130363/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed130363_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "living",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed130363_simple_h126_k4_macos.json",
+      "config_sha256": "a163def4fb9b9b73a56442f02b1d8391c54adaa7660552ee949abc615c6bef5a",
+      "dependencies": [
+        "living_seed130363_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed130363/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/living/seed130363/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed130363_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "living",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 130363
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_living_seed155921_ordered_h72_k4_e32_macos.json",
+      "config_sha256": "45bd0387e23f1f393243ac4fe5710491ceffd044a64c6993c848cb2cca2148d2",
+      "dependencies": [],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed155921/phase10/ordered_h72_k4/best_general.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed155921_phase10_ordered",
+      "kind": "phase10_ordered_training",
+      "scene": "living",
+      "script": "scripts/phase_10_train_masked_diffusion.py",
+      "script_sha256": "dd6694ac13fbc4df958e2c99770324275581da781f1223c35213e070fa810fa2",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_living_seed155921_simple_h126_k4_e32_macos.json",
+      "config_sha256": "96e120cc01d184fad05e1845f3fe9d229830fbb4bfebb5de423f10cb1f13e0d9",
+      "dependencies": [
+        "living_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed155921/phase11/simple_h126_k4/best_simple_mlp.pt"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed155921_phase11_simple",
+      "kind": "phase11_simple_training",
+      "scene": "living",
+      "script": "scripts/phase_11_compare_guidance_models.py",
+      "script_sha256": "21daaa8cfe1bf39fede2cfd7c2da2a0247b2f48008e9f43e898baf05a4a9626e",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed155921_ordered_h72_k4_macos.json",
+      "config_sha256": "0b3e113a10fed73300a975d18cab857bbbe9dbe2bb732eff859580604e687988",
+      "dependencies": [
+        "living_seed155921_phase10_ordered"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed155921/phase12/ordered_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/living/seed155921/phase12/ordered_h72_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed155921_phase12_ordered",
+      "kind": "phase12_ordered_export",
+      "scene": "living",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    },
+    {
+      "config_path": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed155921_simple_h126_k4_macos.json",
+      "config_sha256": "5ee5992df6f9a5c60b6a437c435dd14234429a17f5a517f95eac6dade7f3e796",
+      "dependencies": [
+        "living_seed155921_phase11_simple"
+      ],
+      "expected_outputs": [
+        "results/fresh_confirmatory_models_20260901/living/seed155921/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt",
+        "results/fresh_confirmatory_models_20260901/living/seed155921/phase12/simple_h126_k4/runtime_export_summary.json"
+      ],
+      "initial_status": "pending",
+      "job_id": "living_seed155921_phase12_simple",
+      "kind": "phase12_simple_export",
+      "scene": "living",
+      "script": "scripts/phase_12_export_runtime_model.py",
+      "script_sha256": "287774e8ba87701efb3ed5db9038aaa7f8e968a5e7bfe3344f305de0d59c1c6b",
+      "seed": 155921
+    }
+  ],
+  "orchestrator": "scripts/run_fresh_confirmatory_model_artifacts.py",
+  "parameter_budget": {
+    "absolute_difference": 258,
+    "evidence": [
+      "results/ordered_absorbing_sweep_macos_20260901/mlp_h72_k4_e32/run_20260901_185417/run_summary.json",
+      "results/ordered_absorbing_slabs_simple_k4_macos_20260901/phase11/simple_h126_k4_e32/run_20260901_193650/comparison.json"
+    ],
+    "maximum_relative_difference_percent": 1.0,
+    "ordered_parameters": 55599,
+    "passes": true,
+    "relative_difference_percent": 0.46403712296983757,
+    "simple_over_ordered_ratio": 1.0046403712296983,
+    "simple_parameters": 55857
+  },
+  "protocol_id": "fresh_confirmatory_models_20260901_v1",
+  "purpose": "Frozen, scene-independent confirmatory training/export package for five fresh scenes. Generation performs no training, export, or rendering.",
+  "scenes": [
+    {
+      "replay_path": "results/phase_09_export/replay/paper_plane_mpg.jsonl",
+      "replay_records": 11127,
+      "replay_sha256": "442919f705d14013a8b5df88a686ea1d10433fa3974d353490da4cc35cb35dd3",
+      "scene": "plane",
+      "seeds": [
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_plane_seed104729_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_plane_seed104729_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed104729_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed104729_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 16704,
+          "seed": 104729,
+          "split": {
+            "train_batches_per_epoch": 522,
+            "train_records": 8345,
+            "validation_batches": 174,
+            "validation_records": 2782
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_plane_seed130363_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_plane_seed130363_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed130363_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed130363_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 16704,
+          "seed": 130363,
+          "split": {
+            "train_batches_per_epoch": 522,
+            "train_records": 8345,
+            "validation_batches": 174,
+            "validation_records": 2782
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_plane_seed155921_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_plane_seed155921_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed155921_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_plane_seed155921_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 16704,
+          "seed": 155921,
+          "split": {
+            "train_batches_per_epoch": 522,
+            "train_records": 8345,
+            "validation_batches": 174,
+            "validation_records": 2782
+          }
+        }
+      ],
+      "split_notes": "All rows are L1:0."
+    },
+    {
+      "replay_path": "results/phase_09_export/replay/paper_stone_mpg.jsonl",
+      "replay_records": 3528,
+      "replay_sha256": "11210cb96edda08746dcf731bad4fcb1f4dc5bf9d248b91758b081666ef2cade",
+      "scene": "stone",
+      "seeds": [
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_stone_seed104729_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_stone_seed104729_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed104729_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed104729_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 5312,
+          "seed": 104729,
+          "split": {
+            "train_batches_per_epoch": 166,
+            "train_records": 2646,
+            "validation_batches": 56,
+            "validation_records": 882
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_stone_seed130363_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_stone_seed130363_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed130363_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed130363_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 5312,
+          "seed": 130363,
+          "split": {
+            "train_batches_per_epoch": 166,
+            "train_records": 2646,
+            "validation_batches": 56,
+            "validation_records": 882
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_stone_seed155921_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_stone_seed155921_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed155921_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_stone_seed155921_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 5312,
+          "seed": 155921,
+          "split": {
+            "train_batches_per_epoch": 166,
+            "train_records": 2646,
+            "validation_batches": 56,
+            "validation_records": 882
+          }
+        }
+      ],
+      "split_notes": "Both L1:1 and L2:11 occur in train and validation for every frozen seed."
+    },
+    {
+      "replay_path": "results/phase_09_export/replay/paper_sphere_mpg.jsonl",
+      "replay_records": 344,
+      "replay_sha256": "9b9661173d9e75a59bc6335b98b244756787740f657681f68d3c9a1e4450ea67",
+      "scene": "sphere",
+      "seeds": [
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_sphere_seed104729_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_sphere_seed104729_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed104729_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed104729_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 544,
+          "seed": 104729,
+          "split": {
+            "train_batches_per_epoch": 17,
+            "train_records": 258,
+            "validation_batches": 6,
+            "validation_records": 86
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_sphere_seed130363_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_sphere_seed130363_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed130363_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed130363_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 544,
+          "seed": 130363,
+          "split": {
+            "train_batches_per_epoch": 17,
+            "train_records": 258,
+            "validation_batches": 6,
+            "validation_records": 86
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_sphere_seed155921_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_sphere_seed155921_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed155921_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_sphere_seed155921_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 544,
+          "seed": 155921,
+          "split": {
+            "train_batches_per_epoch": 17,
+            "train_records": 258,
+            "validation_batches": 6,
+            "validation_records": 86
+          }
+        }
+      ],
+      "split_notes": "All rows are L1:1."
+    },
+    {
+      "replay_path": "results/phase_09_export/replay/paper_pool_mpg.jsonl",
+      "replay_records": 57,
+      "replay_sha256": "c2771ff6219c2282aeae99847d4c46f08a8721e029a8074b2784ce842c47bdaf",
+      "scene": "pool",
+      "seeds": [
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_pool_seed104729_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_pool_seed104729_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed104729_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed104729_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 96,
+          "seed": 104729,
+          "split": {
+            "train_batches_per_epoch": 3,
+            "train_records": 43,
+            "validation_batches": 1,
+            "validation_records": 14
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_pool_seed130363_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_pool_seed130363_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed130363_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed130363_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 96,
+          "seed": 130363,
+          "split": {
+            "train_batches_per_epoch": 3,
+            "train_records": 43,
+            "validation_batches": 1,
+            "validation_records": 14
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_pool_seed155921_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_pool_seed155921_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed155921_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_pool_seed155921_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 96,
+          "seed": 155921,
+          "split": {
+            "train_batches_per_epoch": 3,
+            "train_records": 43,
+            "validation_batches": 1,
+            "validation_records": 14
+          }
+        }
+      ],
+      "split_notes": "For every frozen seed, train has 42 L1:1 plus the sole L1:0 row; validation has 14 L1:1 and therefore no rare L1:0 row."
+    },
+    {
+      "replay_path": "results/phase_09_export/replay/paper_living_mpg.jsonl",
+      "replay_records": 27,
+      "replay_sha256": "ad353ba8e4edc6daf7a32c00403f4ea52893a15757bb8f91d3d4fe3a6740d1c0",
+      "scene": "living",
+      "seeds": [
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_living_seed104729_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_living_seed104729_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed104729_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed104729_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 64,
+          "seed": 104729,
+          "split": {
+            "train_batches_per_epoch": 2,
+            "train_records": 20,
+            "validation_batches": 1,
+            "validation_records": 7
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_living_seed130363_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_living_seed130363_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed130363_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed130363_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 64,
+          "seed": 130363,
+          "split": {
+            "train_batches_per_epoch": 2,
+            "train_records": 20,
+            "validation_batches": 1,
+            "validation_records": 7
+          }
+        },
+        {
+          "configs": {
+            "phase10_ordered": "configs/fresh_confirmatory_models_20260901/phase_10_fresh_living_seed155921_ordered_h72_k4_e32_macos.json",
+            "phase11_simple": "configs/fresh_confirmatory_models_20260901/phase_11_fresh_living_seed155921_simple_h126_k4_e32_macos.json",
+            "phase12_ordered": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed155921_ordered_h72_k4_macos.json",
+            "phase12_simple": "configs/fresh_confirmatory_models_20260901/phase_12_fresh_living_seed155921_simple_h126_k4_macos.json"
+          },
+          "optimizer_steps_per_model": 64,
+          "seed": 155921,
+          "split": {
+            "train_batches_per_epoch": 2,
+            "train_records": 20,
+            "validation_batches": 1,
+            "validation_records": 7
+          }
+        }
+      ],
+      "split_notes": "For every frozen seed, train has 7 L2:11 and 13 L4:1111; validation has 3 L2:11 and 4 L4:1111."
+    }
+  ],
+  "schema_version": 1,
+  "scope": {
+    "jobs": 60,
+    "note": "The repository's fair simple trainer is Phase 11; Phase 10 only constructs MaskedSeedDiffusionModel.",
+    "phase10_ordered_configs": 15,
+    "phase11_simple_configs": 15,
+    "phase12_export_configs": 30,
+    "scenes": [
+      "plane",
+      "stone",
+      "sphere",
+      "pool",
+      "living"
+    ],
+    "training_configs": 30,
+    "training_seeds": [
+      104729,
+      130363,
+      155921
+    ]
+  }
+}

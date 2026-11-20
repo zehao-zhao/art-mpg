@@ -1,0 +1,61 @@
+{
+  "paper": [
+    {
+      "D_label": "D01",
+      "render_seed": 1668592294,
+      "model_seed": 104729
+    },
+    {
+      "D_label": "D02",
+      "render_seed": 994471241,
+      "model_seed": 104729
+    },
+    {
+      "D_label": "D03",
+      "render_seed": 472027829,
+      "model_seed": 104729
+    },
+    {
+      "D_label": "D04",
+      "render_seed": 2129530871,
+      "model_seed": 104729
+    },
+    {
+      "D_label": "D05",
+      "render_seed": 1936485002,
+      "model_seed": 104729
+    },
+    {
+      "D_label": "D06",
+      "render_seed": 610686297,
+      "model_seed": 104729
+    },
+    {
+      "D_label": "D07",
+      "render_seed": 1239430601,
+      "model_seed": 104729
+    },
+    {
+      "D_label": "D08",
+      "render_seed": 1710829629,
+      "model_seed": 104729
+    },
+    {
+      "D_label": "D09",
+      "render_seed": 457121851,
+      "model_seed": 155921
+    },
+    {
+      "D_label": "D10",
+      "render_seed": 797665335,
+      "model_seed": 104729
+    }
+  ],
+  "equal_time": [
+    1729,
+    31415,
+    271828,
+    424242,
+    8675309
+  ]
+}

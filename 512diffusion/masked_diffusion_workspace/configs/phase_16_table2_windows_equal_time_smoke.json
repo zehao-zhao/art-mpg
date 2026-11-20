@@ -1,0 +1,29 @@
+{
+  "output_dir": "results/phase_16_table2_windows_equal_time_smoke",
+  "rows": [
+    {
+      "scene_id": "paper_lamp",
+      "display_name": "Lamp",
+      "figure": "Fig.9",
+      "chain_types": "T, RT",
+      "summary_path": "results/phase_16_equal_time_fig9_windows_round2/run_20260325_114429/benchmark_summary.json",
+      "method": "masked_diffusion"
+    },
+    {
+      "scene_id": "paper_slabs",
+      "display_name": "Double Slabs",
+      "figure": "Fig.9",
+      "chain_types": "TT, TTTT",
+      "summary_path": "results/phase_16_equal_time_fig9_windows_round2/run_20260325_114429/benchmark_summary.json",
+      "method": "masked_diffusion"
+    },
+    {
+      "scene_id": "paper_water",
+      "display_name": "Water",
+      "figure": "Fig.19",
+      "chain_types": "TTTT, TTTTTT",
+      "summary_path": "results/phase_16_equal_time_water_windows/run_20260325_114430/benchmark_summary.json",
+      "method": "masked_diffusion"
+    }
+  ]
+}

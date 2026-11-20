@@ -1,0 +1,129 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\arraystretch}{1.08}
+\caption{Median full-frame linear-RGB MSE across D01--D10 for each scene at 60 SPP and $64\times64$ resolution. Lower is better.}
+\label{tab:median-mse}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{5}{c}{Baselines} & Ours \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-7}
+Scene & PT & PPG & SMS & MPG & NPM & ART-MPG \\
+\midrule
+Living
+& $1.227\times10^{-3}$
+& $4.710\times10^{-2}$
+& $1.206\times10^{-3}$
+& $1.676\times10^{-3}$
+& $1.463\times10^{-3}$
+& $\mathbf{1.003\times10^{-3}}$ \\
+
+Lamp
+& $4.009\times10^{-2}$
+& $3.202\times10^{-2}$
+& $6.472\times10^{-3}$
+& $1.780\times10^{-3}$
+& $2.483\times10^{-3}$
+& $\mathbf{1.683\times10^{-3}}$ \\
+
+Plane
+& $2.912\times10^{-1}$
+& $2.914\times10^{-1}$
+& $2.992\times10^{-1}$
+& $2.810\times10^{-1}$
+& $2.896\times10^{-1}$
+& $\mathbf{2.728\times10^{-1}}$ \\
+
+Slabs
+& $1.112\times10^{-1}$
+& $2.340\times10^{1}$
+& $8.095\times10^{-2}$
+& $2.823\times10^{-1}$
+& $7.957\times10^{-2}$
+& $\mathbf{6.479\times10^{-2}}$ \\
+
+Stone
+& $7.035\times10^{0}$
+& $3.196\times10^{-2}$
+& $2.558\times10^{-2}$
+& $9.165\times10^{-2}$
+& $2.505\times10^{-2}$
+& $\mathbf{1.897\times10^{-2}}$ \\
+
+Pool
+& $1.126\times10^{0}$
+& $6.030\times10^{-1}$
+& $1.315\times10^{0}$
+& $1.161\times10^{0}$
+& $7.627\times10^{-1}$
+& $\mathbf{7.196\times10^{-3}}$ \\
+
+Sphere
+& $4.603\times10^{1}$
+& $1.879\times10^{-1}$
+& $1.016\times10^{-1}$
+& $1.109\times10^{-1}$
+& $8.141\times10^{-2}$
+& $\mathbf{7.219\times10^{-2}}$ \\
+
+Water
+& $4.613\times10^{-3}$
+& $5.941\times10^{-3}$
+& $2.289\times10^{-3}$
+& $2.940\times10^{-3}$
+& $2.245\times10^{-3}$
+& $\mathbf{2.139\times10^{-3}}$ \\
+
+Ring--and--Slab
+& $2.876\times10^{1}$
+& $2.308\times10^{1}$
+& $7.039\times10^{-2}$
+& $4.163\times10^{-1}$
+& $7.368\times10^{-2}$
+& $\mathbf{5.980\times10^{-2}}$ \\
+
+Pillars
+& $9.242\times10^{-2}$
+& $2.900\times10^{-1}$
+& $9.190\times10^{-2}$
+& $2.335\times10^{-1}$
+& $8.134\times10^{-2}$
+& $\mathbf{7.128\times10^{-2}}$ \\
+
+Slab-$\times1$
+& $7.981\times10^{-2}$
+& $8.043\times10^{-2}$
+& $5.356\times10^{-2}$
+& $4.636\times10^{-2}$
+& $5.258\times10^{-2}$
+& $\mathbf{4.435\times10^{-2}}$ \\
+
+Slab-$\times3$
+& $2.980\times10^{-1}$
+& $2.980\times10^{-1}$
+& $2.618\times10^{-1}$
+& $1.057\times10^{0}$
+& $2.688\times10^{-1}$
+& $\mathbf{2.297\times10^{-1}}$ \\
+
+Pillar-$\times3$
+& $1.024\times10^{-1}$
+& $1.027\times10^{-1}$
+& $9.213\times10^{-2}$
+& $1.217\times10^{-1}$
+& $8.291\times10^{-2}$
+& $\mathbf{7.488\times10^{-2}}$ \\
+
+Cornell Glass
+& $5.445\times10^{-3}$
+& $4.974\times10^{-2}$
+& $\mathbf{5.435\times10^{-3}}$
+& $8.887\times10^{-3}$
+& $6.675\times10^{-3}$
+& $6.491\times10^{-3}$ \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

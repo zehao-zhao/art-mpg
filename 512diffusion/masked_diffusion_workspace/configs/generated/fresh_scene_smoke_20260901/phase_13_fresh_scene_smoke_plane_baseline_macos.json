@@ -1,0 +1,34 @@
+{
+  "profile_id": "macos_arm64_native",
+  "job_ids": [
+    "paper_plane_mpg"
+  ],
+  "width": 16,
+  "height": 16,
+  "crop_width": 16,
+  "crop_height": 16,
+  "reference_sample_count": 1,
+  "compare_sample_count": 1,
+  "samples_per_pass": 1,
+  "threads": 4,
+  "seed": 1729,
+  "reference_seed": 314159,
+  "mpg_train_budget": 0.2,
+  "masked_diffusion_train_budget": 0.2,
+  "mpg_train_fusion": true,
+  "runtime_only_methods": [],
+  "learned_proposal_inv_prob_clamp": 512.0,
+  "learned_proposal_contribution_clamp": 32.0,
+  "learned_proposal_max_trials": 2048,
+  "diffusion_steps": 10,
+  "bounce_alpha": 0.5,
+  "learned_direction_kappa_scale": 1.0,
+  "learned_direction_flip_to_receiver_hemisphere": false,
+  "time_budget_seconds": 300.0,
+  "postprocess_crop_from_full_exr": false,
+  "output_dir": "results/fresh_scene_feasibility_smoke_macos_20260901/plane/baseline",
+  "methods": [
+    "path_reference",
+    "mpg"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "checkpoint_path": "results/phase_11_compare_models/best_simple_mlp.pt",
+  "output_dir": "results/phase_12_runtime_export_simple_mlp",
+  "output_name": "simple_mlp_runtime.txt",
+  "model_kind": "simple_mlp"
+}

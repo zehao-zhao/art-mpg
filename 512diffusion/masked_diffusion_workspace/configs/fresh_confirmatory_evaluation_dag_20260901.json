@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "protocol_id": "fresh_confirmatory_evaluation_20260901_v1",
+  "prepared_date": "2026-09-01",
+  "execution_authorized": true,
+  "purpose": "Fail-closed, resumable orchestration contract for the preregistered five-scene confirmatory render evaluation.",
+  "manifest_schema": {
+    "path": "configs/fresh_confirmatory_evaluation_dag_20260901.schema.json",
+    "sha256": "023d1c7cf051a4da2d422ceaa17bc4806ee67b79021ec88bfc89cef4ce4dab3b"
+  },
+  "plan": {
+    "path": "FRESH_SCENE_EVALUATION_PLAN_20260901.md",
+    "sha256": "16dc5f776e17926e55a43fba13baa8f18008250583f20acad4f09f2234e263de"
+  },
+  "frozen_training_manifest": {
+    "path": "configs/fresh_confirmatory_models_20260901/frozen_manifest.json",
+    "sha256": "3908b8e6ef41fcbc211427399acf6a8836aafa7c54d67f975be64a10e5d5f83b",
+    "protocol_id": "fresh_confirmatory_models_20260901_v1",
+    "read_only": true
+  },
+  "scene_asset_inventory": {
+    "path": "configs/fresh_confirmatory_scene_asset_inventory_20260901.json",
+    "sha256": "ff329b277a0b887815dee27c3d171a1294e4103af9e6d0fa62477cabd541365b",
+    "protocol_id": "fresh_confirmatory_scene_assets_20260901_v1"
+  },
+  "renderer_inputs": {
+    "baseline_manifest": {
+      "path": "configs/baseline_manifest.json",
+      "sha256": "2539c65cb7e5457c2ff17fbe2144a4bb154157ed08aa2ab44e2792fda9db6052",
+      "path_base": "workspace_root"
+    },
+    "runtime_profiles": {
+      "path": "configs/runtime_profiles.json",
+      "sha256": "483db7de1c56f79782ea4baf53f2307a787a818eb6cd33aee26f11a77b8587cc",
+      "path_base": "workspace_root"
+    },
+    "mitsuba_cli": {
+      "path": "mitsuba/build_macos_arm64_py312/dist/mitsuba",
+      "sha256": "02942a93cd93da312e8f3b2d501e5e7569197c82afde16af24c22062577de7ab",
+      "path_base": "project_root"
+    },
+    "manifold_path_guiding_plugin": {
+      "path": "mitsuba/build_macos_arm64_py312/dist/plugins/manifold_path_guiding.dylib",
+      "sha256": "cc4b025178592cdffea1e2e3bf30ef08b08098295ed7ab14a6b2d66a5f6f1512",
+      "path_base": "project_root"
+    }
+  },
+  "dependency_receipts": {
+    "model_artifacts": {
+      "path": "results/fresh_confirmatory_models_20260901/smoke_registration_receipt.json",
+      "sha256": "35ed6525a3b6527d2f13b77c9c639575cfffd8b7b6144a4ebf1999398a746997",
+      "protocol_id": "fresh_scene_smoke_registration_20260901_v1",
+      "required": true
+    },
+    "status_only_smoke": {
+      "path": "results/fresh_scene_feasibility_smoke_macos_20260901/smoke_gate_receipt.json",
+      "sha256": "e4af3cd004ffb97dc76fa921759a7322032c4fe77c5349c822850afafcf6c95d",
+      "protocol_id": "fresh_scene_smoke_gate_20260901_v1",
+      "required": true,
+      "required_flags": {
+        "all_passed": true,
+        "quality_metrics_inspected": false,
+        "quality_metrics_computed": false
+      }
+    }
+  },
+  "runner_interfaces": {
+    "orchestrator": {
+      "path": "scripts/run_fresh_confirmatory_evaluation_dag.py",
+      "sha256": "b25b7946bac7ec97435173b608b8d8902e9edcba4d66cb0767ef8ff8c51a6420"
+    },
+    "phase13": {
+      "path": "scripts/phase_13_run_formal_benchmark.py",
+      "sha256": "3cd12302a15002ab54090b24168e6a3bbf0d9d5b608ccec6e59d263e63279127",
+      "required_config_fields": [
+        "shared_reference_manifest_output",
+        "external_reference_manifest",
+        "defer_metrics"
+      ]
+    },
+    "deferred_metric_finalizer": {
+      "path": "scripts/finalize_phase13_deferred_metrics.py",
+      "sha256": "c7092b45fee72ee42a2eccca5b890281001eaf738e45652e22d88f6138204e62",
+      "required": true,
+      "must_write_new_summary": true,
+      "must_not_overwrite_candidate_summary": true
+    },
+    "hierarchical_summarizer": {
+      "path": "scripts/summarize_fresh_confirmatory_evaluation.py",
+      "sha256": "ddf9d6646a3ce727582173c3b944194a2adb527f5e78a0533ddf39dfc9842c29",
+      "required": true
+    },
+    "shared_reference": {
+      "status": "ready",
+      "producer_config": {
+        "path": "configs/phase_13_fresh_shared_reference_32768_macos.json",
+        "sha256": "6d667714fc7d3e5b12a7133ce0d21a11388004916d0f9630ed12371046379003"
+      },
+      "manifest_path": "results/fresh_confirmatory_evaluation_20260901/shared_references/shared_reference_manifest.json",
+      "expected_schema_version": 1,
+      "expected_status": "ready",
+      "expected_scene_count": 5,
+      "producer_config_field": "shared_reference_manifest_output",
+      "consumer_config_field": "external_reference_manifest"
+    }
+  },
+  "study": {
+    "profile_id": "macos_arm64_native",
+    "scenes": [
+      {
+        "key": "plane",
+        "job_id": "paper_plane_mpg",
+        "scene_path": "scenes/plane/plane_reproduce_fig07.xml",
+        "scene_sha256": "b7a27fb61adc8f55c5c8377ef1599dbf8f24418e31cf338d8690003b5e70bad9"
+      },
+      {
+        "key": "stone",
+        "job_id": "paper_stone_mpg",
+        "scene_path": "scenes/stone/stone_reproduce.xml",
+        "scene_sha256": "d88294063496399ccea1f042e270914dfe46fff1db108d950155d24338d47bd8"
+      },
+      {
+        "key": "sphere",
+        "job_id": "paper_sphere_mpg",
+        "scene_path": "scenes/sphere/sphere_reproduce.xml",
+        "scene_sha256": "e8453a877af479e640110d1be1215e2706b6f32fb68ec8f04d90a153575a68c1"
+      },
+      {
+        "key": "pool",
+        "job_id": "paper_pool_mpg",
+        "scene_path": "scenes/pool/pool_reproduce.xml",
+        "scene_sha256": "679700d15c0c47ad77ef644cf6460a1e355463361fc87dc81cfac850590b9b23"
+      },
+      {
+        "key": "living",
+        "job_id": "paper_living_mpg",
+        "scene_path": "scenes/living/living_reproduce.xml",
+        "scene_sha256": "13cff4a1571df2ba3057e391e7a1f022a3acb7243e8a49da04dfe66ad58f80b2"
+      }
+    ],
+    "methods": {
+      "ordered": {
+        "phase13_method": "ordered_diffusion_mlp_h72_k4",
+        "train_seeded": true,
+        "bounce_alpha": 0.0,
+        "learned_direction_kappa_scale": 1.0,
+        "learned_direction_flip_to_receiver_hemisphere": false,
+        "expected_parameters": 55599
+      },
+      "simple": {
+        "phase13_method": "simple_mlp_k4",
+        "train_seeded": true,
+        "bounce_alpha": 0.5,
+        "learned_direction_kappa_scale": 0.25,
+        "learned_direction_flip_to_receiver_hemisphere": false,
+        "expected_parameters": 55857
+      },
+      "mpg": {
+        "phase13_method": "mpg",
+        "train_seeded": false,
+        "bounce_alpha": 0.5,
+        "learned_direction_kappa_scale": 1.0,
+        "learned_direction_flip_to_receiver_hemisphere": false,
+        "mpg_train_budget": 0.2,
+        "mpg_train_fusion": true
+      }
+    },
+    "training_seeds": [104729, 130363, 155921],
+    "render_seeds": [1729, 31415, 271828, 424242, 8675309],
+    "reference_seed": 314159,
+    "reference_noise_seed": 161803,
+    "training_pairing_limitation": "Ordered and simple models use identical replay, split seed, split indices, epoch count, and optimizer budget, but exact minibatch permutations are not guaranteed because model construction consumes the global Torch RNG before DataLoader iteration. The already frozen models are not retrained; this is reported as a protocol limitation.",
+    "resolution": {
+      "width": 64,
+      "height": 64,
+      "crop_width": 64,
+      "crop_height": 64
+    },
+    "common_runtime": {
+      "samples_per_pass": 1,
+      "threads": 4,
+      "diffusion_steps": 10,
+      "learned_proposal_inv_prob_clamp": 512.0,
+      "learned_proposal_contribution_clamp": 32.0,
+      "learned_proposal_max_trials": 2048,
+      "time_budget_seconds": 300.0
+    }
+  },
+  "stages": {
+    "dependency_gates": {
+      "model_artifact_receipt_count": 1,
+      "status_only_smoke_receipt_count": 1,
+      "block_until_both_hash_pinned": true
+    },
+    "shared_references": {
+      "method": "path_reference",
+      "sample_count": 32768,
+      "render_count": 5,
+      "single_shared_manifest": true
+    },
+    "reference_noise_check": {
+      "method": "pt",
+      "sample_count": 16384,
+      "render_count": 5,
+      "watchdog_seconds": 1800.0,
+      "metric_deferred_until_unlock": true,
+      "note": "The Phase 13 pt slug uses the same path integrator but is candidate-only, so it can consume the shared reference with defer_metrics=true. Its dedicated 1800-second watchdog covers the approximately eight-minute Living estimate and is distinct from the 300-second learned-candidate watchdog."
+    },
+    "equal_spp": {
+      "sample_count": 64,
+      "ordered_render_count": 75,
+      "simple_render_count": 75,
+      "mpg_render_count": 25,
+      "total_render_count": 175,
+      "defer_metrics": true
+    },
+    "timing_calibration": {
+      "blind": true,
+      "probe_sample_counts": [1, 16],
+      "cells": 15,
+      "representative_training_seed": 104729,
+      "mandatory_16spp_repeats_per_cell": 2,
+      "base_probe_count": 45,
+      "conditional_16spp_repeat_count_max": 15,
+      "repeat_threshold_fraction": 0.1,
+      "repeat_trigger": "absolute_difference_between_two_16spp_whole_process_times_divided_by_their_mean",
+      "fit_time_source": "whole_process_wall_seconds_including_startup",
+      "quality_metrics_forbidden": true,
+      "target_seconds": 120.0,
+      "watchdog_seconds": 300.0,
+      "fit": "time_seconds = startup_seconds + spp * marginal_seconds",
+      "rounding": "largest_positive_integer_spp_predicted_not_to_exceed_target",
+      "frozen_map_path": "results/fresh_confirmatory_evaluation_20260901/equal_time_spp_map.json"
+    },
+    "equal_time": {
+      "ordered_render_count": 75,
+      "simple_render_count": 75,
+      "mpg_render_count": 25,
+      "total_render_count": 175,
+      "defer_metrics": true,
+      "spp_source": "frozen_calibration_map"
+    },
+    "metric_barrier": {
+      "candidate_render_count_required": 350,
+      "require_all_successful": true,
+      "require_candidate_metrics_null_before_unlock": true,
+      "require_candidate_summary_hashes": true,
+      "require_reference_manifest_hash": true,
+      "unlock_receipt_path": "results/fresh_confirmatory_evaluation_20260901/metric_unlock_receipt.json"
+    },
+    "final_summary": {
+      "primary_metric": "linear_rgb_full_frame_mse_float64",
+      "mse_floor": 1e-20,
+      "bootstrap_seed": 20260901,
+      "bootstrap_replicates": 10000,
+      "learned_vs_simple_pairs_per_scene": 15,
+      "learned_vs_mpg_pairs_per_scene": 5,
+      "equal_scene_weighting": true,
+      "hierarchical_bootstrap": true,
+      "strong_claim_scene_majority": 3,
+      "output_json": "results/fresh_confirmatory_evaluation_20260901/final_hierarchical_summary.json",
+      "output_markdown": "results/fresh_confirmatory_evaluation_20260901/final_hierarchical_summary.md"
+    }
+  },
+  "information_barrier": {
+    "candidate_quality_locked_until_all_candidate_renders_complete": true,
+    "forbidden_before_unlock": [
+      "candidate_mse",
+      "candidate_psnr",
+      "candidate_image_decode_except_nonfinite_validation",
+      "per_scene_quality_summary"
+    ],
+    "allowed_before_unlock": [
+      "exit_status",
+      "seconds",
+      "output_exists",
+      "output_sha256",
+      "nonfinite_pixel_boolean",
+      "runtime_loaded_marker",
+      "control_and_provenance_hashes"
+    ]
+  },
+  "outputs": {
+    "root": "results/fresh_confirmatory_evaluation_20260901",
+    "state": "results/fresh_confirmatory_evaluation_20260901/orchestrator_state.json",
+    "lock": "results/fresh_confirmatory_evaluation_20260901/.orchestrator.lock",
+    "generated_configs": "results/fresh_confirmatory_evaluation_20260901/generated_configs",
+    "candidate_quarantine": "results/fresh_confirmatory_evaluation_20260901/candidate_quarantine",
+    "metric_index": "results/fresh_confirmatory_evaluation_20260901/finalized_metric_index.json",
+    "logs": "results/fresh_confirmatory_evaluation_20260901/orchestrator_logs"
+  },
+  "estimate": {
+    "render_only_hours_low": 9.0,
+    "render_only_hours_high": 12.0,
+    "training_and_registration_excluded": true,
+    "notes": "Includes five 32768-spp references, five 16384-spp reference-noise checks, 350 candidates, blind probes, process startup, hashing, and finalization; transient reruns are extra."
+  },
+  "fail_closed_placeholders": []
+}

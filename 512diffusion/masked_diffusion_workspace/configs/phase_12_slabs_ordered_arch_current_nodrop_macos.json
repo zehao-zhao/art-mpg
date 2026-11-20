@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_current_h72_d3_te24_drop0/best_general.pt",
+  "output_dir": "results/ordered_absorbing_arch_sweep_macos_20260901/phase12/current_nodrop",
+  "output_name": "slabs_ordered_arch_current_nodrop_runtime.txt"
+}

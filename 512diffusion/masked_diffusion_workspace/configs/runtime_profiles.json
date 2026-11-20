@@ -1,0 +1,67 @@
+{
+  "profiles": [
+    {
+      "id": "windows_native",
+      "label": "Windows Native",
+      "command_mode": "native",
+      "host_platforms": ["windows"],
+      "target_platform": "windows",
+      "binary_path": "mitsuba/build_windows_py312/dist/mitsuba.exe",
+      "plugin_dir": "mitsuba/build_windows_py312/dist/plugins",
+      "python_module_dir": "mitsuba/build_windows_py312/dist/python",
+      "path_entries": [
+        "mitsuba/build_windows_py312/dist",
+        "mitsuba/build_windows_py312/dist/plugins"
+      ],
+      "library_entries": [
+        "mitsuba/build_windows_py312/dist",
+        "mitsuba/build_windows_py312/dist/plugins"
+      ]
+    },
+    {
+      "id": "linux_native",
+      "label": "Linux Native",
+      "command_mode": "native",
+      "host_platforms": ["linux"],
+      "target_platform": "linux",
+      "binary_path": "mitsuba/build_linux_py312/dist/mitsuba",
+      "plugin_dir": "mitsuba/build_linux_py312/dist/plugins",
+      "python_module_dir": "mitsuba/build_linux_py312/dist/python",
+      "path_entries": ["mitsuba/build_linux_py312/dist"],
+      "library_entries": [
+        "mitsuba/build_linux_py312/dist",
+        "mitsuba/build_linux_py312/dist/plugins"
+      ]
+    },
+    {
+      "id": "macos_arm64_native",
+      "label": "macOS Apple Silicon Native",
+      "command_mode": "native",
+      "host_platforms": ["darwin"],
+      "target_platform": "darwin",
+      "binary_path": "mitsuba/build_macos_arm64_py312/dist/mitsuba",
+      "plugin_dir": "mitsuba/build_macos_arm64_py312/dist/plugins",
+      "python_module_dir": "mitsuba/build_macos_arm64_py312/dist/python",
+      "path_entries": ["mitsuba/build_macos_arm64_py312/dist"],
+      "library_entries": [
+        "mitsuba/build_macos_arm64_py312/dist",
+        "mitsuba/build_macos_arm64_py312/dist/plugins"
+      ]
+    },
+    {
+      "id": "wsl_linux",
+      "label": "WSL Linux",
+      "command_mode": "wsl",
+      "host_platforms": ["windows"],
+      "target_platform": "linux",
+      "binary_path": "mitsuba/build_wsl_py312/dist/mitsuba",
+      "plugin_dir": "mitsuba/build_wsl_py312/dist/plugins",
+      "python_module_dir": "mitsuba/build_wsl_py312/dist/python",
+      "path_entries": ["mitsuba/build_wsl_py312/dist"],
+      "library_entries": [
+        "mitsuba/build_wsl_py312/dist",
+        "mitsuba/build_wsl_py312/dist/plugins"
+      ]
+    }
+  ]
+}

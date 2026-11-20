@@ -1,0 +1,39 @@
+{
+  "profile_id": "windows_native",
+  "job_ids": [
+    "paper_living_mpg",
+    "paper_lamp_mpg",
+    "resource_living_mpg",
+    "resource_lamp_mpg"
+  ],
+  "width": 96,
+  "height": 96,
+  "crop_width": 96,
+  "crop_height": 96,
+  "reference_sample_count": 256,
+  "compare_sample_count": 64,
+  "samples_per_pass": 1,
+  "threads": 4,
+  "seed": 42,
+  "mpg_train_budget": 0.5,
+  "mpg_train_fusion": true,
+  "bounce_alpha": 0.5,
+  "learned_direction_kappa_scale": 1.0,
+  "learned_direction_flip_to_receiver_hemisphere": true,
+  "methods": [
+    "path_reference",
+    "pt",
+    "sms_star",
+    "mpg",
+    "masked_diffusion",
+    "masked_diffusion_vmf",
+    "simple_mlp"
+  ],
+  "runtime_model_path": "results/phase_12_runtime_export/masked_diffusion_runtime.txt",
+  "runtime_model_paths": {
+    "masked_diffusion": "results/phase_12_runtime_export/masked_diffusion_runtime.txt",
+    "masked_diffusion_vmf": "results/phase_12_runtime_export_vmf/masked_diffusion_vmf_runtime.txt",
+    "simple_mlp": "results/phase_12_runtime_export_simple_mlp/simple_mlp_runtime.txt"
+  },
+  "output_dir": "results/phase_13_formal_benchmark"
+}

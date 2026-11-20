@@ -1,0 +1,28 @@
+{
+  "replay_paths": [
+    "results/phase_09_export/replay/paper_living_mpg.jsonl",
+    "results/phase_09_export/replay/paper_lamp_mpg.jsonl",
+    "results/phase_09_export/replay/resource_living_mpg.jsonl",
+    "results/phase_09_export/replay/resource_lamp_mpg.jsonl"
+  ],
+  "output_dir": "results/phase_10_masked_diffusion_s2_vmf_tuned_long",
+  "seed": 42,
+  "batch_size": 8,
+  "epochs": 192,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 4,
+  "device": "auto",
+  "direction_loss_weight": 1.0,
+  "direction_loss_type": "vmf",
+  "direction_vmf_kappa": 1.0,
+  "direction_space": "s2",
+  "full_mask_probability": 0.25,
+  "hidden_dim": 128,
+  "depth": 4,
+  "dropout": 0.1,
+  "time_embedding_dim": 64,
+  "token_embedding_dim": 32
+}

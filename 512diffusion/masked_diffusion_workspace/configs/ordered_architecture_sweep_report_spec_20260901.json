@@ -1,0 +1,77 @@
+{
+  "simple_k4_parameter_count": 55857,
+  "kappa_selection_report": "results/model_specific_kappa_sweep_macos_20260901/model_specific_kappa_summary.json",
+  "offline_models": [
+    {
+      "label": "wide compact MLP (h104/d2/token2/drop0)",
+      "is_new": true,
+      "checkpoint": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_wide_compact_h104_d2_te2_drop0/best_general.pt",
+      "run_dir": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_wide_compact_h104_d2_te2_drop0/run_20260901_205021"
+    },
+    {
+      "label": "deep compact MLP (h76/d4/token2/drop0)",
+      "is_new": true,
+      "checkpoint": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_deep_compact_h76_d4_te2_drop0/best_general.pt",
+      "run_dir": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_deep_compact_h76_d4_te2_drop0/run_20260901_205056"
+    },
+    {
+      "label": "wide-token MLP (h84/d2/token24/drop0)",
+      "is_new": true,
+      "checkpoint": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_wide_tokens_h84_d2_te24_drop0/best_general.pt",
+      "run_dir": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_wide_tokens_h84_d2_te24_drop0/run_20260901_205137"
+    },
+    {
+      "label": "current-shape no-drop MLP (h72/d3/token24/drop0)",
+      "is_new": true,
+      "checkpoint": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_current_h72_d3_te24_drop0/best_general.pt",
+      "run_dir": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_current_h72_d3_te24_drop0/run_20260901_205212"
+    },
+    {
+      "label": "capacity-matched DiT (h40/d2/K4/drop0)",
+      "is_new": true,
+      "checkpoint": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_dit_h40_d2_k4_te16_drop0/best_general.pt",
+      "run_dir": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_dit_h40_d2_k4_te16_drop0/run_20260901_205249"
+    },
+    {
+      "label": "current ordered MLP baseline (h72/d3/token24/drop.1)",
+      "is_new": false,
+      "checkpoint": "results/ordered_absorbing_sweep_macos_20260901/mlp_h72_k4_e32/best_general.pt",
+      "run_dir": "results/ordered_absorbing_sweep_macos_20260901/mlp_h72_k4_e32/run_20260901_185417"
+    }
+  ],
+  "render_runs": [
+    {
+      "label": "wide compact MLP (h104/d2/token2/drop0)",
+      "summary": "results/ordered_absorbing_arch_sweep_macos_20260901/phase13_seed424242_wide_compact_k100_noflip/run_20260901_205402/benchmark_summary.json"
+    },
+    {
+      "label": "deep compact MLP (h76/d4/token2/drop0)",
+      "summary": "results/ordered_absorbing_arch_sweep_macos_20260901/phase13_seed424242_deep_compact_k100_noflip/run_20260901_205427/benchmark_summary.json"
+    },
+    {
+      "label": "wide-token MLP (h84/d2/token24/drop0)",
+      "summary": "results/ordered_absorbing_arch_sweep_macos_20260901/phase13_seed424242_wide_tokens_k100_noflip/run_20260901_205451/benchmark_summary.json"
+    },
+    {
+      "label": "current-shape no-drop MLP (h72/d3/token24/drop0)",
+      "summary": "results/ordered_absorbing_arch_sweep_macos_20260901/phase13_seed424242_current_nodrop_k100_noflip/run_20260901_205517/benchmark_summary.json"
+    },
+    {
+      "label": "capacity-matched DiT (h40/d2/K4/drop0)",
+      "summary": "results/ordered_absorbing_arch_sweep_macos_20260901/phase13_seed424242_dit_h40_d2_k4_k100_noflip/run_20260901_205543/benchmark_summary.json"
+    }
+  ],
+  "confirmation_runs": [
+    {
+      "summary": "results/ordered_absorbing_arch_sweep_macos_20260901/phase13_dit_confirm_seed104729_k100_noflip/run_20260901_205829/benchmark_summary.json"
+    },
+    {
+      "summary": "results/ordered_absorbing_arch_sweep_macos_20260901/phase13_dit_confirm_seed130363_k100_noflip/run_20260901_205917/benchmark_summary.json"
+    },
+    {
+      "summary": "results/ordered_absorbing_arch_sweep_macos_20260901/phase13_dit_confirm_seed155921_k100_noflip/run_20260901_210005/benchmark_summary.json"
+    }
+  ],
+  "output_json": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_ordered_architecture_sweep_report.json",
+  "output_markdown": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_ordered_architecture_sweep_report.md"
+}

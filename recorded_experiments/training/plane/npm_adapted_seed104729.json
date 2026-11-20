@@ -1,0 +1,47 @@
+{
+  "replay_paths": [
+    "${ARTMPG_ROOT}/external_inputs/replays/plane.jsonl"
+  ],
+  "output_dir": "${ARTMPG_ROOT}/work/training/plane/npm_adapted_seed104729",
+  "seed": 104729,
+  "batch_size": 262144,
+  "max_steps": 300,
+  "learning_rate": 0.005,
+  "ema_decay": 0.99,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 0,
+  "device": "cpu",
+  "position_bounds_padding": 0.01,
+  "model": {
+    "grid_resolutions": [
+      8,
+      11,
+      16,
+      22,
+      31,
+      44,
+      61,
+      86
+    ],
+    "features_per_level": 4,
+    "sh_degree": 2,
+    "hidden_dim": 64,
+    "hidden_layers": 3,
+    "vmf_components": 8,
+    "min_kappa": 0.0001,
+    "max_kappa": 128.0,
+    "position_min": [
+      -19.699371337890625,
+      -2.6183799946011277e-06,
+      -13.83505916595459
+    ],
+    "position_max": [
+      265.0564880371094,
+      1.7004380424623378e-05,
+      402.7164611816406
+    ],
+    "descriptor_policy_id": "geometric_length_trace_inferred_type_v1"
+  },
+  "npm_adapted_checkpoint": "${ARTMPG_ROOT}/512diffusion/masked_diffusion_workspace/results/phase20_equal_render_spp_20260904_v2/stages/train_npm/jobs/train_npm__plane__t104729/attempt_001/artifacts/run_20260904_225358/npm_adapted_seed_direction.pt"
+}

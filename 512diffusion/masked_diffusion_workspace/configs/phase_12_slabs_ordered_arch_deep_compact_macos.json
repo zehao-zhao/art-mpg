@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_deep_compact_h76_d4_te2_drop0/best_general.pt",
+  "output_dir": "results/ordered_absorbing_arch_sweep_macos_20260901/phase12/deep_compact",
+  "output_name": "slabs_ordered_arch_deep_compact_runtime.txt"
+}

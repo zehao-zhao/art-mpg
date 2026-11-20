@@ -1,0 +1,38 @@
+{
+  "profile_id": "macos_arm64_native",
+  "job_ids": [
+    "paper_lamp_mpg"
+  ],
+  "width": 64,
+  "height": 64,
+  "crop_width": 64,
+  "crop_height": 64,
+  "reference_sample_count": 1024,
+  "compare_sample_count": 64,
+  "samples_per_pass": 1,
+  "threads": 4,
+  "seed": 104729,
+  "reference_seed": 99173,
+  "mpg_train_budget": 0.2,
+  "masked_diffusion_train_budget": 0.2,
+  "mpg_train_fusion": true,
+  "runtime_model_paths": {
+    "simple_mlp_k4": "results/ordered_absorbing_lamp_simple_k4_macos_20260901/phase12/simple_h126_k4/simple_mlp_k4_runtime.txt"
+  },
+  "runtime_only_methods": [
+    "simple_mlp_k4"
+  ],
+  "learned_proposal_inv_prob_clamp": 512.0,
+  "learned_proposal_contribution_clamp": 32.0,
+  "learned_proposal_max_trials": 2048,
+  "diffusion_steps": 10,
+  "bounce_alpha": 0.5,
+  "learned_direction_kappa_scale": 2.0,
+  "learned_direction_flip_to_receiver_hemisphere": false,
+  "time_budget_seconds": 900,
+  "output_dir": "results/model_specific_kappa_sweep_macos_20260901/lamp_simple_seed104729_k200",
+  "methods": [
+    "path_reference",
+    "simple_mlp_k4"
+  ]
+}

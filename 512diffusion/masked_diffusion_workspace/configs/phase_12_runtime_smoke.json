@@ -1,0 +1,17 @@
+{
+  "profile_id": "windows_native",
+  "job_ids": [
+    "paper_living_mpg",
+    "paper_lamp_mpg",
+    "resource_living_mpg",
+    "resource_lamp_mpg"
+  ],
+  "width": 64,
+  "height": 64,
+  "crop_width": 64,
+  "crop_height": 64,
+  "sample_count": 1,
+  "samples_per_pass": 1,
+  "threads": 1,
+  "runtime_model_path": "results/phase_12_runtime_export/masked_diffusion_runtime.txt"
+}

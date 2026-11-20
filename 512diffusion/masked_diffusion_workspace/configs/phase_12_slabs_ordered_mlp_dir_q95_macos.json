@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_direction_loss_sweep_macos_20260901/slabs_q95/best_general.pt",
+  "output_dir": "results/ordered_absorbing_direction_loss_sweep_macos_20260901/phase12/slabs_q95",
+  "output_name": "ordered_diffusion_mlp_dir_q95_runtime.txt"
+}

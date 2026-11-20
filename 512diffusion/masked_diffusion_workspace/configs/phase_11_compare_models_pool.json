@@ -1,0 +1,23 @@
+{
+  "replay_paths": [
+    "results/phase_09_export/replay/paper_pool_mpg.jsonl"
+  ],
+  "masked_diffusion_checkpoint": "results/phase_10_masked_diffusion_pool/best_pool.pt",
+  "output_dir": "results/phase_11_compare_models_pool",
+  "seed": 42,
+  "batch_size": 8,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 4,
+  "device": "auto",
+  "direction_loss_weight": 0.5,
+  "diffusion_steps": 1,
+  "simple_baseline": {
+    "hidden_dim": 128,
+    "depth": 3,
+    "dropout": 0.1,
+    "epochs": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001
+  }
+}

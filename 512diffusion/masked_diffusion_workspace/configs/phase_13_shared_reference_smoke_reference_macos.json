@@ -1,0 +1,21 @@
+{
+  "profile_id": "macos_arm64_native",
+  "job_ids": ["paper_lamp_mpg"],
+  "width": 16,
+  "height": 16,
+  "crop_width": 16,
+  "crop_height": 16,
+  "reference_sample_count": 8,
+  "compare_sample_count": 1,
+  "samples_per_pass": 1,
+  "threads": 1,
+  "seed": 424242,
+  "reference_seed": 99173,
+  "mpg_train_budget": 0.2,
+  "masked_diffusion_train_budget": 0.2,
+  "mpg_train_fusion": true,
+  "time_budget_seconds": 20,
+  "output_dir": "results/shared_reference_smoke_macos_20260901/reference",
+  "shared_reference_manifest_output": "results/shared_reference_smoke_macos_20260901/shared_reference_manifest.json",
+  "methods": ["path_reference"]
+}

@@ -1,0 +1,27 @@
+{
+  "profile_id": "macos_arm64_native",
+  "job_ids": [
+    "paper_plane_mpg",
+    "paper_stone_mpg",
+    "paper_sphere_mpg",
+    "paper_pool_mpg",
+    "paper_living_mpg"
+  ],
+  "width": 64,
+  "height": 64,
+  "crop_width": 64,
+  "crop_height": 64,
+  "reference_sample_count": 32768,
+  "compare_sample_count": 1,
+  "samples_per_pass": 1,
+  "threads": 4,
+  "seed": 314159,
+  "reference_seed": 314159,
+  "mpg_train_budget": 0.2,
+  "masked_diffusion_train_budget": 0.2,
+  "mpg_train_fusion": true,
+  "time_budget_seconds": 3600,
+  "output_dir": "results/fresh_confirmatory_evaluation_20260901/shared_references/reference_32768",
+  "shared_reference_manifest_output": "results/fresh_confirmatory_evaluation_20260901/shared_references/shared_reference_manifest.json",
+  "methods": ["path_reference"]
+}

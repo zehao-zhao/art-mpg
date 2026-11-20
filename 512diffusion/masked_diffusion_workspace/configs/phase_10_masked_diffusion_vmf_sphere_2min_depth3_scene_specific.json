@@ -1,0 +1,24 @@
+{
+    "replay_paths":  [
+                         "results/phase_09_export/replay/paper_sphere_mpg.jsonl"
+                     ],
+    "output_dir":  "results/phase_10_masked_diffusion_vmf_tuned",
+    "seed":  42,
+    "batch_size":  8,
+    "epochs":  128,
+    "learning_rate":  0.001,
+    "weight_decay":  0.0001,
+    "val_fraction":  0.25,
+    "max_records":  null,
+    "num_workers":  4,
+    "device":  "auto",
+    "direction_loss_weight":  1.0,
+    "direction_loss_type":  "vmf",
+    "direction_vmf_kappa":  1.0,
+    "full_mask_probability":  0.25,
+    "hidden_dim":  128,
+    "depth":  3,
+    "dropout":  0.1,
+    "time_embedding_dim":  64,
+    "token_embedding_dim":  32
+}

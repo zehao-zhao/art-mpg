@@ -1,0 +1,26 @@
+{
+  "living": [
+    "external_inputs/references/equal_time/living_seed314159.exr",
+    "external_inputs/references/equal_time/living_seed314160.exr"
+  ],
+  "slabs": [
+    "external_inputs/references/equal_time/slabs_seed314159.exr",
+    "external_inputs/references/equal_time/slabs_seed314160.exr"
+  ],
+  "cornell_glass": [
+    "external_inputs/references/equal_time/cornell_glass_seed314159.exr",
+    "external_inputs/references/equal_time/cornell_glass_seed314160.exr"
+  ],
+  "pool": [
+    "external_inputs/references/equal_time/pool_seed314159.exr",
+    "external_inputs/references/equal_time/pool_seed314160.exr"
+  ],
+  "water": [
+    "external_inputs/references/equal_time/water_seed314159.exr",
+    "external_inputs/references/equal_time/water_seed314160.exr"
+  ],
+  "stone": [
+    "external_inputs/references/equal_time/stone_seed314159.exr",
+    "external_inputs/references/equal_time/stone_seed314160.exr"
+  ]
+}

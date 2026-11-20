@@ -1,0 +1,16 @@
+{
+  "living": "512diffusion/scenes/living",
+  "lamp": "512diffusion/scenes/lamp",
+  "plane": "512diffusion/scenes/plane",
+  "slabs": "512diffusion/scenes/slabs",
+  "stone": "512diffusion/scenes/stone",
+  "pool": "512diffusion/scenes/pool",
+  "sphere": "512diffusion/scenes/sphere",
+  "water": "512diffusion/scenes/water",
+  "ring_and_slab": "512diffusion/scenes/ring_and_slab",
+  "pillars": "512diffusion/scenes/pillars",
+  "slab_x1": "512diffusion/scenes/slab_x1",
+  "slab_x3": "512diffusion/scenes/slab_x3",
+  "pillar_x3": "512diffusion/scenes/pillar_x3",
+  "cornell_glass": "512diffusion/scenes/cornell_glass"
+}

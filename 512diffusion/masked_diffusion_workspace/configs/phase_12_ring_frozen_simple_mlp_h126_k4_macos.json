@@ -1,0 +1,6 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_ring_frozen_macos_20260901/phase11/simple_h126_k4/best_simple_mlp.pt",
+  "output_dir": "results/ordered_absorbing_ring_frozen_macos_20260901/phase12/simple_h126_k4",
+  "output_name": "simple_mlp_k4_runtime.txt",
+  "model_kind": "simple_mlp"
+}

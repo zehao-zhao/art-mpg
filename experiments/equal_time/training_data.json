@@ -1,0 +1,38 @@
+{
+  "living": {
+    "replay": "external_inputs/replays/equal_time/living.jsonl",
+    "records": 27,
+    "sha256": "ad353ba8e4edc6daf7a32c00403f4ea52893a15757bb8f91d3d4fe3a6740d1c0",
+    "model_seed": 104729
+  },
+  "slabs": {
+    "replay": "external_inputs/replays/equal_time/slabs.jsonl",
+    "records": 1287,
+    "sha256": "6b02cebc698087186559ff8264cc6304a6d9e6ee9c2f5228964b5b3e70070a79",
+    "model_seed": 104729
+  },
+  "cornell_glass": {
+    "replay": "external_inputs/replays/equal_time/cornell_glass.jsonl",
+    "records": 206811,
+    "sha256": "a021df53ceff8c1b82ecb6f80d198ad63e359d853ab45347fe35228f490fddb2",
+    "model_seed": 104729
+  },
+  "pool": {
+    "replay": "external_inputs/replays/equal_time/pool.jsonl",
+    "records": 57,
+    "sha256": "c2771ff6219c2282aeae99847d4c46f08a8721e029a8074b2784ce842c47bdaf",
+    "model_seed": 104729
+  },
+  "water": {
+    "replay": "external_inputs/replays/equal_time/water.jsonl",
+    "records": 40,
+    "sha256": "f21ab13c4d138cfcc1cd2bed275df77aae38346237211ff58b7f52327dac081d",
+    "model_seed": 104729
+  },
+  "stone": {
+    "replay": "external_inputs/replays/equal_time/stone.jsonl",
+    "records": 3528,
+    "sha256": "11210cb96edda08746dcf731bad4fcb1f4dc5bf9d248b91758b081666ef2cade",
+    "model_seed": 104729
+  }
+}

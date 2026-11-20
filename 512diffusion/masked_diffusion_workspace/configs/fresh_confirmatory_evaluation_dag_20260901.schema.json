@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fresh_confirmatory_evaluation_dag_20260901.schema.json",
+  "title": "Fresh confirmatory evaluation DAG manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "protocol_id",
+    "execution_authorized",
+    "manifest_schema",
+    "plan",
+    "frozen_training_manifest",
+    "scene_asset_inventory",
+    "renderer_inputs",
+    "dependency_receipts",
+    "runner_interfaces",
+    "study",
+    "stages",
+    "information_barrier",
+    "outputs",
+    "estimate",
+    "fail_closed_placeholders"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "protocol_id": {"const": "fresh_confirmatory_evaluation_20260901_v1"},
+    "prepared_date": {"type": "string"},
+    "purpose": {"type": "string"},
+    "execution_authorized": {"type": "boolean"},
+    "manifest_schema": {"$ref": "#/$defs/hashPinnedFile"},
+    "plan": {"$ref": "#/$defs/hashPinnedFile"},
+    "frozen_training_manifest": {
+      "allOf": [
+        {"$ref": "#/$defs/hashPinnedFile"},
+        {
+          "type": "object",
+          "required": ["protocol_id", "read_only"],
+          "properties": {
+            "protocol_id": {"type": "string"},
+            "read_only": {"const": true}
+          }
+        }
+      ]
+    },
+    "scene_asset_inventory": {
+      "allOf": [
+        {"$ref": "#/$defs/hashPinnedFile"},
+        {
+          "type": "object",
+          "required": ["protocol_id"],
+          "properties": {
+            "protocol_id": {
+              "const": "fresh_confirmatory_scene_assets_20260901_v1"
+            }
+          }
+        }
+      ]
+    },
+    "renderer_inputs": {"type": "object"},
+    "dependency_receipts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_artifacts", "status_only_smoke"],
+      "properties": {
+        "model_artifacts": {"$ref": "#/$defs/pendingHashPinnedFile"},
+        "status_only_smoke": {"$ref": "#/$defs/pendingHashPinnedFile"}
+      }
+    },
+    "runner_interfaces": {"type": "object"},
+    "study": {"type": "object"},
+    "stages": {"type": "object"},
+    "information_barrier": {"type": "object"},
+    "outputs": {"type": "object"},
+    "estimate": {"type": "object"},
+    "fail_closed_placeholders": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hashPinnedFile": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "pendingHashPinnedFile": {
+      "type": "object",
+      "required": ["path", "sha256", "protocol_id"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/sha256"}
+          ]
+        },
+        "protocol_id": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

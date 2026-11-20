@@ -1,0 +1,8 @@
+{
+  "living": "512diffusion/scenes/living",
+  "slabs": "512diffusion/scenes/slabs",
+  "cornell_glass": "512diffusion/scenes/cornell_glass",
+  "pool": "512diffusion/scenes/pool",
+  "water": "512diffusion/scenes/water",
+  "stone": "512diffusion/scenes/stone"
+}

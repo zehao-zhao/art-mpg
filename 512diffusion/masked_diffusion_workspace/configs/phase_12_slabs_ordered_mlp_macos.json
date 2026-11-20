@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_pilot_macos_20260901/phase10/ordered_diffusion_mlp/best_general.pt",
+  "output_dir": "results/ordered_absorbing_pilot_macos_20260901/phase12/ordered_diffusion_mlp",
+  "output_name": "ordered_diffusion_mlp_runtime.txt"
+}

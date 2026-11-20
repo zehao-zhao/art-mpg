@@ -1,0 +1,26 @@
+{
+  "profile_id": "windows_native",
+  "job_ids": [
+    "paper_ring_and_slab_mpg"
+  ],
+  "width": 64,
+  "height": 64,
+  "crop_width": 64,
+  "crop_height": 64,
+  "reference_sample_count": 8,
+  "compare_sample_count": 4,
+  "samples_per_pass": 1,
+  "threads": 4,
+  "seed": 42,
+  "mpg_train_budget": 0.2,
+  "mpg_train_fusion": true,
+  "runtime_model_path": "results/phase_12_runtime_export/masked_diffusion_runtime.txt",
+  "output_dir": "results/phase_13_ring_and_slab_smoke_windows",
+  "methods": [
+    "path_reference",
+    "pt",
+    "sms_star",
+    "mpg",
+    "masked_diffusion"
+  ]
+}

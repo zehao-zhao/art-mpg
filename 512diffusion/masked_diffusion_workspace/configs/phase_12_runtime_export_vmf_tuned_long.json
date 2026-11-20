@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/phase_10_masked_diffusion_vmf_tuned_long/best_general.pt",
+  "output_dir": "results/phase_12_runtime_export_vmf_tuned_long",
+  "output_name": "masked_diffusion_vmf_runtime.txt"
+}

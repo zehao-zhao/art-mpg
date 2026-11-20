@@ -1,0 +1,6 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_lamp_macos_20260901/phase11/simple_mlp/best_simple_mlp.pt",
+  "output_dir": "results/ordered_absorbing_lamp_macos_20260901/phase12/simple_mlp",
+  "output_name": "simple_mlp_runtime.txt",
+  "model_kind": "simple_mlp"
+}

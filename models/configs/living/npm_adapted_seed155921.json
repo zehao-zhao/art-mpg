@@ -1,0 +1,46 @@
+{
+  "replay_paths": [
+    "${ARTMPG_ROOT}/external_inputs/replays/living.jsonl"
+  ],
+  "output_dir": "${ARTMPG_ROOT}/work/training/living/npm_adapted_seed155921",
+  "seed": 155921,
+  "batch_size": 262144,
+  "max_steps": 300,
+  "learning_rate": 0.005,
+  "ema_decay": 0.99,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 0,
+  "device": "cpu",
+  "position_bounds_padding": 0.01,
+  "model": {
+    "grid_resolutions": [
+      8,
+      11,
+      16,
+      22,
+      31,
+      44,
+      61,
+      86
+    ],
+    "features_per_level": 4,
+    "sh_degree": 2,
+    "hidden_dim": 64,
+    "hidden_layers": 3,
+    "vmf_components": 8,
+    "min_kappa": 0.0001,
+    "max_kappa": 128.0,
+    "position_min": [
+      -3.368285655975342,
+      0.31225207448005676,
+      -1.84927237033844
+    ],
+    "position_max": [
+      -0.7809731960296631,
+      1.8740239143371582,
+      0.01830962672829628
+    ],
+    "descriptor_policy_id": "geometric_length_trace_inferred_type_v1"
+  }
+}

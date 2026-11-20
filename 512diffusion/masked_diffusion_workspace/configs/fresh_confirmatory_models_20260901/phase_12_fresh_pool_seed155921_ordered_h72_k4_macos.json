@@ -1,0 +1,10 @@
+{
+  "checkpoint_path": "results/fresh_confirmatory_models_20260901/pool/seed155921/phase10/ordered_h72_k4/best_general.pt",
+  "expected_parameter_count": 55599,
+  "model": "ordered",
+  "model_kind": "masked_diffusion",
+  "output_dir": "results/fresh_confirmatory_models_20260901/pool/seed155921/phase12/ordered_h72_k4",
+  "output_name": "ordered_diffusion_mlp_h72_k4_runtime.txt",
+  "protocol_id": "fresh_confirmatory_models_20260901_v1",
+  "scene_key": "pool"
+}

@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/phase_10_masked_diffusion_transformer_vmf_mixture/best_general.pt",
+  "output_dir": "results/phase_12_runtime_export_transformer_vmf_mixture",
+  "output_name": "masked_diffusion_transformer_vmf_mixture_runtime.txt"
+}

@@ -1,0 +1,26 @@
+{
+  "profile_id": "macos_arm64_native",
+  "job_ids": [
+    "paper_plane_mpg"
+  ],
+  "width": 64,
+  "height": 64,
+  "crop_width": 64,
+  "crop_height": 64,
+  "reference_sample_count": 4,
+  "compare_sample_count": 4,
+  "samples_per_pass": 1,
+  "threads": 1,
+  "seed": 1729,
+  "mpg_train_budget": 0.2,
+  "masked_diffusion_train_budget": 0.2,
+  "mpg_train_fusion": true,
+  "runtime_model_path": "results/phase_12_runtime_export_plane/masked_diffusion_runtime.txt",
+  "time_budget_seconds": 30,
+  "output_dir": "results/phase_13_plane_smoke_macos",
+  "methods": [
+    "path_reference",
+    "mpg",
+    "masked_runtime"
+  ]
+}

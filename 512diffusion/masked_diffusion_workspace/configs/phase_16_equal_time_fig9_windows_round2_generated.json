@@ -1,0 +1,56 @@
+{
+  "profile_id": "windows_native",
+  "job_ids": [
+    "paper_lamp_mpg",
+    "paper_slabs_mpg"
+  ],
+  "width": 128,
+  "height": 128,
+  "crop_width": 128,
+  "crop_height": 128,
+  "reference_sample_count": 512,
+  "compare_sample_count": 128,
+  "samples_per_pass": 1,
+  "threads": 4,
+  "seed": 42,
+  "mpg_train_budget": 0.5,
+  "mpg_train_fusion": true,
+  "output_dir": "results/phase_16_equal_time_fig9_windows_round2",
+  "methods": [
+    "path_reference",
+    "pt",
+    "ppg",
+    "vapg",
+    "vmmpg",
+    "sms",
+    "sms_star",
+    "mpg",
+    "masked_diffusion"
+  ],
+  "runtime_model_path": "results/phase_12_runtime_export/masked_diffusion_runtime.txt",
+  "runtime_model_paths": {
+    "paper_lamp_mpg": "results/phase_12_runtime_export_lamp_per_seed/masked_diffusion_runtime.txt"
+  },
+  "masked_diffusion_prob_uniform": null,
+  "masked_diffusion_prob_uniform_train": null,
+  "method_compare_sample_counts": null,
+  "scene_method_compare_sample_counts": {
+    "paper_lamp|pt": 654,
+    "paper_lamp|ppg": 521,
+    "paper_lamp|vapg": 513,
+    "paper_lamp|vmmpg": 443,
+    "paper_lamp|sms": 382,
+    "paper_lamp|sms_star": 364,
+    "paper_lamp|mpg": 295,
+    "paper_lamp|masked_diffusion": 8,
+    "paper_slabs|pt": 2082,
+    "paper_slabs|ppg": 1450,
+    "paper_slabs|vapg": 1448,
+    "paper_slabs|vmmpg": 1352,
+    "paper_slabs|sms": 130,
+    "paper_slabs|sms_star": 269,
+    "paper_slabs|mpg": 222,
+    "paper_slabs|masked_diffusion": 7
+  },
+  "time_budget_seconds": 15.0
+}

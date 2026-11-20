@@ -1,0 +1,111 @@
+{
+  "asset_reference_count": 71,
+  "discovery": "recursive_mitsuba_xml_filename_references_with_exact_default_expansion_excluding_film_outputs",
+  "path_base": "project_root",
+  "protocol_id": "fresh_confirmatory_scene_assets_20260901_v1",
+  "scenes": {
+    "living": {
+      "assets": {
+        "scenes/living/models/Mesh001.obj": "63a8fe5809e161b9b38590c1b2d9e1c50f52ced6b62d9c3bd3fc74fc55b2a60a",
+        "scenes/living/models/Mesh002.obj": "1b40419777c732c582e6cf13488ccfb4b2535579fd8f4b27f433f1580d4b4c93",
+        "scenes/living/models/Mesh003.obj": "2717286eb8f4c3615ba0b04b273d54889137cf49e639e2346c46d7760fb4df84",
+        "scenes/living/models/Mesh004.obj": "0dac22291bf5074037d8f1735291805bdef8f9d25ab72f64ce7f46f2da3cf445",
+        "scenes/living/models/Mesh005.obj": "5d0183335db284ad69bb259731f93649d94fdf18ec50a1568230e8d78deceb99",
+        "scenes/living/models/Mesh006.obj": "8a4ffb6f5317100998ac21d153a3b240196727da66819a492a60e4cb6878628f",
+        "scenes/living/models/Mesh007.obj": "9e50f691011fede9ad060f64920d62c465af8e7f689d23e10a711492bbb5c7b6",
+        "scenes/living/models/Mesh008.obj": "83adc464009b845835f582d3a1595a07d305852d419b6b24c4434f0a51264482",
+        "scenes/living/models/Mesh009.obj": "c8f16eb71bb592925ff1a60ccb030f6b83751934d0578cb0639b4257c0912214",
+        "scenes/living/models/Mesh010.obj": "bbaf49f70a54a140f03a763e7820464cde0b4abd6a7479a6a3b085bda56fd705",
+        "scenes/living/models/Mesh011.obj": "60b71c9e62885324757e72204c648ef850566e9cd827beca94ba6da7e3b367c8",
+        "scenes/living/models/Mesh012.obj": "d7899bff059286d2d34e5261c859cfea769a020146caa88468604d3b4ace3153",
+        "scenes/living/models/Mesh013.obj": "e4ce777fa1249b9062eb51b1a1863ac791c5c31d91cc6a395278fe96904705a7",
+        "scenes/living/models/Mesh014.obj": "239febf260511424423c9186e362730b9638f25dea53c9834b664a43d8b42f60",
+        "scenes/living/models/Mesh015.obj": "37cca0e471767e8023cf2d2b3b9ef6dadaea32171bb3234f00104216b0efadb7",
+        "scenes/living/models/Mesh016.obj": "a87a2ee037752864e19c7ab1f0a3c379977dbf39454774a3813fc018fc363ca4",
+        "scenes/living/models/Mesh017.obj": "6911f140754fda5658eaae62b543cd5be79deb4a95b887ee797fdd20ceae43d6",
+        "scenes/living/models/Mesh018.obj": "794a987c1e3fc419fe284fe3a83b848cbb683544382fdfb30e2047b7a3d45241",
+        "scenes/living/models/Mesh019.obj": "bf128b188660c44c79b28611c8ad29d75d7623ef73b780194ec6715d67dc0cae",
+        "scenes/living/models/Mesh020.obj": "e17ea8256f6a5b39013ace891ce179be7a8a3fa840c47074867f4e4a9a704cbf",
+        "scenes/living/models/Mesh021.obj": "1abf3d3a180c3f39e5082f20a66edb2e8490aa78c839f54066fb8754f7b1b37d",
+        "scenes/living/models/Mesh022.obj": "0ca5a2ca6af6b6d0ce9c760e18a3c9a6f211b57a2a8971a8358c424e3c5e7ace",
+        "scenes/living/models/Mesh023.obj": "1467807b2fa9c028b8d54e741d6e9991c3b3191e755ebe9496760b8229e3da35",
+        "scenes/living/models/Mesh024.obj": "5868f798f798115b51794c17d7383314ddf5561571fd72535c850a0dd6ac40aa",
+        "scenes/living/models/Mesh025.obj": "4be04b8e7b2e30a9ca846fa47806db550c87d7034abb6f73d6f2a968d1cbaa47",
+        "scenes/living/models/Mesh026.obj": "ad3fecd5201f8fc7537210a61d5715e6545f72c1dc5bd4be687b7b2b12fe6b71",
+        "scenes/living/models/Mesh027.obj": "7fee910aa9a9f8e18beb48f8730c59a7df8cbe924d3c4c1026d0bd56d1fba7ec",
+        "scenes/living/models/Mesh028.obj": "e9a4878222dec1b27d5ea7857fae881b7426165d607609867bfdacaa09fc8297",
+        "scenes/living/models/Mesh029.obj": "f9e0383cee664572ae9786bd94fd9adae6cda8bd1f654f3a8cf1a10b0d90a33f",
+        "scenes/living/models/Mesh030.obj": "6490f0655674589cf62c96fcef74112a45b523b8dcd5fb2953320078894ec404",
+        "scenes/living/models/Mesh031.obj": "5fbfa8cfb561799bbe8ed03cc2bccddb9769132ce07514a86f2baf45a12a0207",
+        "scenes/living/models/Mesh032.obj": "8b210809d05714df875506641fa7d9d3fcf6f66928da2f6b1e2c1b528c8df033",
+        "scenes/living/models/Mesh033.obj": "0b61bcbe4958dae30d2c3e8383d1a78e8f0930efac61d5b22822385dd701cddf",
+        "scenes/living/models/Mesh034.obj": "5b4f48bb78e05691dc768d7e0316d8657ca68cabca800753f52a39b91af43579",
+        "scenes/living/models/Mesh035.obj": "dfeab565928a7d4dca4d34575d016fb4ba91df1ec694cdc1362e7614d26fbff9",
+        "scenes/living/textures/Abstract.jpg": "2996e8b35da766fb745c0441d730bcf3827a241710a1d6404c3d4b3ffcf5ead8",
+        "scenes/living/textures/Fabric.jpg": "ba7cdc6bad2c5fcec2c370d4bc89ccf71710451ba0fa0c94103070fd1e64b204",
+        "scenes/living/textures/WoodFloor.jpg": "1ae3b83017e041a10adb4192caa25ddb769e1c54618ebe43e5fa914c803c6a32"
+      },
+      "scene_path": "scenes/living/living_reproduce.xml",
+      "scene_sha256": "13cff4a1571df2ba3057e391e7a1f022a3acb7243e8a49da04dfe66ad58f80b2"
+    },
+    "plane": {
+      "assets": {
+        "scenes/plane/textures/[2K]Tiles71/Tiles71_col.jpg": "265ff749e279c505a9e27c46782f5929d5cdab55bd7ecc55e2820a3b560b4187",
+        "scenes/plane/textures/normalmap_gaussian.exr": "f1e002586496f60c29f684fb50e2c0d13b66815aa5d6bcdb6c937dab526da2c0",
+        "scenes/plane/textures/sky.exr": "961c4dc30e7a524ff78a3b8ce673c93a89b566ac7b3d2ecaebe46161e4e758c4"
+      },
+      "scene_path": "scenes/plane/plane_reproduce_fig07.xml",
+      "scene_sha256": "b7a27fb61adc8f55c5c8377ef1599dbf8f24418e31cf338d8690003b5e70bad9"
+    },
+    "pool": {
+      "assets": {
+        "scenes/pool/meshes/chair_fabric_1.obj": "0f928d62d470d3d1be150bebc9d5fe0249711161b5c64b26a66165fcc77b8df5",
+        "scenes/pool/meshes/chair_fabric_2.obj": "a2ed5554be068b940ffbdf109f047f9d59e8ade6e3463d5103034a2bfea18083",
+        "scenes/pool/meshes/chairs_wood.obj": "81fff80ef8cbe243bbfde9c6ceff3670665374b502d8e0f746552e6e6e282e93",
+        "scenes/pool/meshes/floor1.obj": "fe9cc7219fa5de4a48e6f095aea20082df89056d0317adc4540d9b099dc9ece8",
+        "scenes/pool/meshes/floor2.obj": "69fb0515eb88e4aca6646e1d5ba9e0dd5e8b496378b111d7620d219aa97b0772",
+        "scenes/pool/meshes/ladder_metal.obj": "4552091996a64436519d177aa5bc2a56527012257b2111f007fff932da1a5cd9",
+        "scenes/pool/meshes/ladder_steps.obj": "7f3396b55aade944214566996e0422f725d70a6897f26a80a9707cfc945a4047",
+        "scenes/pool/meshes/pool_border.obj": "c7bd250bb860421e0bb0c6d97e779bda8543f9fe85f1f1cdf381c445f420005a",
+        "scenes/pool/meshes/pool_inside.obj": "8949c4fbd2741bcdc30f5162c330e60f438b073c1a8ac1fb7850127b440b618f",
+        "scenes/pool/meshes/torus.obj": "92bfc594de2de9874d6ad8f386f153b1a3e39bf0bce8021fef4f30d12ce819e0",
+        "scenes/pool/meshes/umbrella_base.obj": "47e527e4a875c8781d14c3f7936d5f066c4a4c261e21e5330594280314a78017",
+        "scenes/pool/meshes/umbrella_cylinders.obj": "89b33395fb17e50fc900f304340a1191389cbb12d717eefc6d49c37896d65e7d",
+        "scenes/pool/meshes/umbrella_top.obj": "c10c084b775e222a489eb4ae431edef20d6c978fa292dafb47b713d378770043",
+        "scenes/pool/meshes/water_plane.obj": "ee9d91c855e77fc37abbe7eaec880b0e782fb3eb05ce51c280924c50539305ae",
+        "scenes/pool/textures/Striped_cotton_01_2K_Base_Color.jpg": "a2aa8da9b5a236140d452cd1d20b85baac3c194e3975748f71e9dc0c02e2c466",
+        "scenes/pool/textures/Striped_cotton_01_2K_Base_Color_2.jpg": "ac3211730cd1c72ba647cc351d4ca88084762ad1e5441dfef1b464cba039c901",
+        "scenes/pool/textures/Striped_cotton_01_2K_Normal.jpg": "3e03977b6aef706d3561ece94419d20e726bdd8bb04c6c1e98eca24cb88a40dd",
+        "scenes/pool/textures/[2K]Fabric33/Fabric33_nrm.png": "bf41c8b37a6aeb213d10a3199ad4d4c9ca710bed0ac9337748a8c179189043e3",
+        "scenes/pool/textures/[2K]Tiles06/Tiles06_col.png": "1a803651fed0cdce0fa20d8892da18314c960af5f7d70ca4fc2df4b0c8885f8f",
+        "scenes/pool/textures/[2K]Tiles27/Tiles27_col.jpg": "9968eb6aad74e464839e59e50e01eb9e14fb2fa1378a81ced998f50450a67b45",
+        "scenes/pool/textures/[2K]Tiles50/Tiles50_col.jpg": "dfc1832aa6c2dd2d62cc18c5d82eac094747af69de3dc9ef8257c421f6dbd033",
+        "scenes/pool/textures/[2K]Tiles54/Tiles54_col.jpg": "ac08b47859052f2f9b7e50c28666b0de8e5cd7d8cdd067ac46954818dd88980b",
+        "scenes/pool/textures/normalmap_pool.exr": "f9874e6de8df735099eec7aec1c9ab1a8e46c419d51b6eff1459298b20975c3f",
+        "scenes/pool/textures/quarry_03_1k.exr": "6e68fc780aa9d3065b8ac9002da15711c32c558642c78cbfad34abc763a07306",
+        "scenes/pool/textures/siggraph_logo.png": "d5a7eb54b91fc6af44b1e096e21c3b7713eeaa7cb985be13ffff1f248d688200"
+      },
+      "scene_path": "scenes/pool/pool_reproduce.xml",
+      "scene_sha256": "679700d15c0c47ad77ef644cf6460a1e355463361fc87dc81cfac850590b9b23"
+    },
+    "sphere": {
+      "assets": {
+        "scenes/sphere/textures/[2K]Tiles71/Tiles71_col.jpg": "265ff749e279c505a9e27c46782f5929d5cdab55bd7ecc55e2820a3b560b4187",
+        "scenes/sphere/textures/normalmap_waves.exr": "6835b5c58710a9c687436902418823d1b014742936a6d7542a0663f678589f1c"
+      },
+      "scene_path": "scenes/sphere/sphere_reproduce.xml",
+      "scene_sha256": "e8453a877af479e640110d1be1215e2706b6f32fb68ec8f04d90a153575a68c1"
+    },
+    "stone": {
+      "assets": {
+        "scenes/stone/meshes/ball1new.obj": "03c1d7dd21a1dc722d456b16cc3637638861d2c288094721de4d4e356b142258",
+        "scenes/stone/meshes/ball2new.obj": "1892c49b3a8865de0a4dbc67d9ebec1515656b1b5bdcfc680d9bae631b6e6a6a",
+        "scenes/stone/meshes/ground2.obj": "f00dfe649c77d63f2893ab315629c38ad154ba4008d228b4e39f701cf813aab1"
+      },
+      "scene_path": "scenes/stone/stone_reproduce.xml",
+      "scene_sha256": "d88294063496399ccea1f042e270914dfe46fff1db108d950155d24338d47bd8"
+    }
+  },
+  "schema_version": 1,
+  "unique_asset_count": 71
+}

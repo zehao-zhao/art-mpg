@@ -1,0 +1,10 @@
+{
+  "checkpoint_path": "results/fresh_confirmatory_models_20260901/sphere/seed130363/phase11/simple_h126_k4/best_simple_mlp.pt",
+  "expected_parameter_count": 55857,
+  "model": "simple",
+  "model_kind": "simple_mlp",
+  "output_dir": "results/fresh_confirmatory_models_20260901/sphere/seed130363/phase12/simple_h126_k4",
+  "output_name": "simple_mlp_k4_runtime.txt",
+  "protocol_id": "fresh_confirmatory_models_20260901_v1",
+  "scene_key": "sphere"
+}

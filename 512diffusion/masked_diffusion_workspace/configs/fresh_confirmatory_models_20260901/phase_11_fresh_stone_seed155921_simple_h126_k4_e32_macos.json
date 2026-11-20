@@ -1,0 +1,41 @@
+{
+  "batch_size": 16,
+  "beta_end": 0.05,
+  "beta_schedule": "linear",
+  "beta_start": 0.0005,
+  "device": "auto",
+  "diffusion_steps": 1,
+  "diffusion_train_steps": 1,
+  "direction_loss_type": "vmf_mixture",
+  "direction_loss_weight": 1.0,
+  "direction_vmf_kappa": 1.0,
+  "expected_parameter_count": 55857,
+  "masked_diffusion_checkpoint": "results/fresh_confirmatory_models_20260901/stone/seed155921/phase10/ordered_h72_k4/best_general.pt",
+  "max_records": null,
+  "num_workers": 0,
+  "output_dir": "results/fresh_confirmatory_models_20260901/stone/seed155921/phase11/simple_h126_k4",
+  "protocol_id": "fresh_confirmatory_models_20260901_v1",
+  "replay_paths": [
+    "results/phase_09_export/replay/paper_stone_mpg.jsonl"
+  ],
+  "replay_records": 3528,
+  "replay_sha256": "11210cb96edda08746dcf731bad4fcb1f4dc5bf9d248b91758b081666ef2cade",
+  "reverse_noise_scale": 1.0,
+  "scene_key": "stone",
+  "seed": 155921,
+  "simple_baseline": {
+    "depth": 4,
+    "dropout": 0.1,
+    "epochs": 32,
+    "grad_clip_norm": 0.5,
+    "hidden_dim": 126,
+    "learning_rate": 0.001,
+    "max_kappa": 64.0,
+    "min_kappa": 0.001,
+    "probabilistic_direction": true,
+    "vmf_components": 4,
+    "weight_decay": 0.0001
+  },
+  "stochastic_diffusion": false,
+  "val_fraction": 0.25
+}

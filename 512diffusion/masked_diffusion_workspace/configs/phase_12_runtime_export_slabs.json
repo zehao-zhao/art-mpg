@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/phase_10_masked_diffusion_slabs/best.pt",
+  "output_dir": "results/phase_12_runtime_export_slabs",
+  "output_name": "masked_diffusion_runtime.txt"
+}

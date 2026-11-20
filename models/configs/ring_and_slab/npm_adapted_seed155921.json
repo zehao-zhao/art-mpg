@@ -1,0 +1,46 @@
+{
+  "replay_paths": [
+    "${ARTMPG_ROOT}/external_inputs/replays/ring_and_slab.jsonl"
+  ],
+  "output_dir": "${ARTMPG_ROOT}/work/training/ring_and_slab/npm_adapted_seed155921",
+  "seed": 155921,
+  "batch_size": 262144,
+  "max_steps": 300,
+  "learning_rate": 0.005,
+  "ema_decay": 0.99,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 0,
+  "device": "cpu",
+  "position_bounds_padding": 0.01,
+  "model": {
+    "grid_resolutions": [
+      8,
+      11,
+      16,
+      22,
+      31,
+      44,
+      61,
+      86
+    ],
+    "features_per_level": 4,
+    "sh_degree": 2,
+    "hidden_dim": 64,
+    "hidden_layers": 3,
+    "vmf_components": 8,
+    "min_kappa": 0.0001,
+    "max_kappa": 128.0,
+    "position_min": [
+      -2.287825584411621,
+      -0.019999999552965164,
+      -0.6738033890724182
+    ],
+    "position_max": [
+      2.2948851585388184,
+      2.0199999809265137,
+      4.533299446105957
+    ],
+    "descriptor_policy_id": "geometric_length_trace_inferred_type_v1"
+  }
+}

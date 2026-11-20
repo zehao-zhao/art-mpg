@@ -1,0 +1,72 @@
+{
+  "output_json": "results/spherical_d3pm_slabs_macos_20260901/slabs_spherical_d3pm_offline_comparison.json",
+  "output_markdown": "results/spherical_d3pm_slabs_macos_20260901/slabs_spherical_d3pm_offline_comparison.md",
+  "models": [
+    {
+      "label": "D3PM T1 k64 KL=.25",
+      "role": "single_step_control",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/b32_t1_learned_means_kappa64_e32/run_20260901_202529/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/b32_t1_learned_means_kappa64_e32/run_20260901_202529"
+    },
+    {
+      "label": "D3PM T1 k64 KL=.05",
+      "role": "single_step_control_low_kl",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/b32_t1_learned_means_kappa64_dw005_e32/run_20260901_203402/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/b32_t1_learned_means_kappa64_dw005_e32/run_20260901_203402"
+    },
+    {
+      "label": "D3PM T2 k64 KL=.25",
+      "role": "multistep_candidate",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/b32_t2_learned_means_kappa64_e32/run_20260901_202609/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/b32_t2_learned_means_kappa64_e32/run_20260901_202609"
+    },
+    {
+      "label": "D3PM T2 k64 KL=.05",
+      "role": "multistep_candidate",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/b32_t2_learned_means_kappa64_dw005_e32/run_20260901_203448/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/b32_t2_learned_means_kappa64_dw005_e32/run_20260901_203448"
+    },
+    {
+      "label": "D3PM T4 k64 KL=.25",
+      "role": "multistep_candidate",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/b32_t4_learned_means_kappa64_e32/run_20260901_202657/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/b32_t4_learned_means_kappa64_e32/run_20260901_202657"
+    },
+    {
+      "label": "D3PM T4 k64 KL=.05",
+      "role": "multistep_candidate",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/b32_t4_learned_means_kappa64_dw005_e32/run_20260901_202757/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/b32_t4_learned_means_kappa64_dw005_e32/run_20260901_202757"
+    },
+    {
+      "label": "D3PM T4 k32 KL=.25",
+      "role": "multistep_candidate",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/b32_t4_learned_means_kappa32_e32/run_20260901_202351/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/b32_t4_learned_means_kappa32_e32/run_20260901_202351"
+    },
+    {
+      "label": "Aligned D3PM T1 k64 KL=.05",
+      "role": "aligned_single_step_control",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/aligned_b32_t1_k64_dw005_e32/run_20260901_204556/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/aligned_b32_t1_k64_dw005_e32/run_20260901_204556"
+    },
+    {
+      "label": "Aligned D3PM T2 k64 KL=.05",
+      "role": "aligned_multistep_candidate",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/aligned_b32_t2_k64_dw005_e32/run_20260901_204643/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/aligned_b32_t2_k64_dw005_e32/run_20260901_204643"
+    },
+    {
+      "label": "Aligned D3PM T4 k64 KL=.05",
+      "role": "aligned_multistep_candidate",
+      "checkpoint": "results/spherical_d3pm_slabs_macos_20260901/aligned_b32_t4_k64_dw005_e32/run_20260901_204736/best.pt",
+      "run_dir": "results/spherical_d3pm_slabs_macos_20260901/aligned_b32_t4_k64_dw005_e32/run_20260901_204736"
+    },
+    {
+      "label": "Ordered K4 baseline",
+      "role": "ordered_k4_baseline",
+      "checkpoint": "results/ordered_absorbing_sweep_macos_20260901/mlp_h72_k4_e32/run_20260901_185417/best.pt",
+      "run_dir": "results/ordered_absorbing_sweep_macos_20260901/mlp_h72_k4_e32/run_20260901_185417"
+    }
+  ]
+}

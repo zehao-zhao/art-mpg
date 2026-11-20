@@ -1,0 +1,39 @@
+{
+  "profile_id": "linux_native",
+  "job_ids": [
+    "paper_water_mpg"
+  ],
+  "seed_ids": [
+    1008
+  ],
+  "width": 128,
+  "height": 72,
+  "crop_width": 128,
+  "crop_height": 72,
+  "sample_count": 999999,
+  "samples_per_pass": 1,
+  "threads": 1,
+  "timeout_seconds": 4.0,
+  "train_budget": 1.0,
+  "train_fusion": true,
+  "guided": true,
+  "allow_partial_aggregate": true,
+  "min_successful_seeds": 1,
+  "min_aggregate_raw_samples": 16,
+  "integrator_integer_overrides": {
+    "max_trials": 128,
+    "export_max_spp_per_round": 256,
+    "sms_bounce_force": 2,
+    "sms_type_force": 1,
+    "max_iterations": 80,
+    "export_seed_candidate_max": 256
+  },
+  "integrator_float_overrides": {
+    "step_scale": 0.5,
+    "solver_threshold": 0.001,
+    "export_seed_candidate_probability": 0.0001
+  },
+  "integrator_boolean_overrides": {
+    "export_seed_candidates": true
+  }
+}

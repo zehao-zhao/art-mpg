@@ -1,0 +1,38 @@
+{
+  "replay_paths": [
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4001.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4002.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4003.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4004.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4005.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4006.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4007.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4008.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4009.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4010.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4011.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4012.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4013.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4014.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4015.jsonl",
+    "results/phase_09_export/replay/per_seed/paper_ring_and_slab_mpg.seed4016.jsonl"
+  ],
+  "masked_diffusion_checkpoint": "results/phase_10_masked_diffusion_ring_and_slab/best_ring_and_slab.pt",
+  "output_dir": "results/phase_11_compare_models_ring_and_slab",
+  "seed": 42,
+  "batch_size": 4,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 4,
+  "device": "auto",
+  "direction_loss_weight": 0.5,
+  "diffusion_steps": 1,
+  "simple_baseline": {
+    "hidden_dim": 128,
+    "depth": 3,
+    "dropout": 0.1,
+    "epochs": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001
+  }
+}

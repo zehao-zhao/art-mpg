@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_dit_h40_d2_k4_te16_drop0/best_general.pt",
+  "output_dir": "results/ordered_absorbing_arch_sweep_macos_20260901/phase12/dit_h40_d2_k4",
+  "output_name": "slabs_ordered_arch_dit_h40_d2_k4_runtime.txt"
+}

@@ -1,0 +1,37 @@
+{
+  "profile_id": "wsl_linux",
+  "job_ids": [
+    "paper_living_mpg",
+    "paper_lamp_mpg",
+    "paper_plane_mpg",
+    "paper_slabs_mpg",
+    "paper_stone_mpg",
+    "resource_living_mpg",
+    "resource_lamp_mpg",
+    "resource_cbox_mpg"
+  ],
+  "width": 64,
+  "height": 64,
+  "crop_width": 64,
+  "crop_height": 64,
+  "reference_sample_count": 8,
+  "compare_sample_count": 4,
+  "samples_per_pass": 1,
+  "threads": 4,
+  "seed": 42,
+  "mpg_train_budget": 0.2,
+  "mpg_train_fusion": true,
+  "runtime_model_path": "results/phase_12_runtime_export/masked_diffusion_runtime.txt",
+  "runtime_model_paths": {
+    "paper_lamp_mpg": "results/phase_12_runtime_export_lamp_per_seed/masked_diffusion_runtime.txt",
+    "resource_lamp_mpg": "results/phase_12_runtime_export_resource_lamp/masked_diffusion_runtime.txt"
+  },
+  "output_dir": "results/phase_13_formal_benchmark_extended_smoke_wsl",
+  "methods": [
+    "path_reference",
+    "pt",
+    "sms_star",
+    "mpg",
+    "masked_diffusion"
+  ]
+}

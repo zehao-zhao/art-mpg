@@ -1,0 +1,6 @@
+{
+  "checkpoint_path": "results/npm_adapted_seed_direction/REPLACE_WITH_RUN/npm_adapted_seed_direction.pt",
+  "output_dir": "paper_runtime/npm_adapted_seed_direction",
+  "output_name": "npm_adapted_runtime.txt",
+  "model_kind": "npm_adapted_seed_direction"
+}

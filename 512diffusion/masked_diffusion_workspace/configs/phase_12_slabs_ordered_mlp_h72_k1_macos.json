@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_sweep_macos_20260901/mlp_h72_k1_e32/best_general.pt",
+  "output_dir": "results/ordered_absorbing_sweep_macos_20260901/phase12/mlp_h72_k1",
+  "output_name": "ordered_diffusion_mlp_h72_k1_runtime.txt"
+}

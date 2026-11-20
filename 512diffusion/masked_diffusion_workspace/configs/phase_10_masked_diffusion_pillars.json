@@ -1,0 +1,22 @@
+{
+  "replay_paths": [
+    "results/phase_09_export/replay/paper_pillars_mpg.jsonl"
+  ],
+  "output_dir": "results/phase_10_masked_diffusion_pillars",
+  "seed": 42,
+  "batch_size": 4,
+  "epochs": 128,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 4,
+  "device": "auto",
+  "direction_loss_weight": 0.5,
+  "full_mask_probability": 0.35,
+  "hidden_dim": 256,
+  "depth": 4,
+  "dropout": 0.1,
+  "time_embedding_dim": 64,
+  "token_embedding_dim": 32
+}

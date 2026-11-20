@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_ring_frozen_macos_20260901/phase10/mlp_h72_k4/best_general.pt",
+  "output_dir": "results/ordered_absorbing_ring_frozen_macos_20260901/phase12/mlp_h72_k4",
+  "output_name": "ordered_diffusion_mlp_h72_k4_runtime.txt"
+}

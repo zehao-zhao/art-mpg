@@ -1,0 +1,38 @@
+{
+  "profile_id": "macos_arm64_native",
+  "job_ids": [
+    "paper_slabs_mpg"
+  ],
+  "width": 64,
+  "height": 64,
+  "crop_width": 64,
+  "crop_height": 64,
+  "reference_sample_count": 1024,
+  "compare_sample_count": 64,
+  "samples_per_pass": 1,
+  "threads": 4,
+  "seed": 155921,
+  "reference_seed": 99173,
+  "mpg_train_budget": 0.2,
+  "masked_diffusion_train_budget": 0.2,
+  "mpg_train_fusion": true,
+  "runtime_model_paths": {
+    "ordered_diffusion_mlp_h72_k4": "results/ordered_absorbing_sweep_macos_20260901/phase12/mlp_h72_k4/ordered_diffusion_mlp_h72_k4_runtime.txt"
+  },
+  "runtime_only_methods": [
+    "ordered_diffusion_mlp_h72_k4"
+  ],
+  "learned_proposal_inv_prob_clamp": 512.0,
+  "learned_proposal_contribution_clamp": 32.0,
+  "learned_proposal_max_trials": 2048,
+  "diffusion_steps": 10,
+  "bounce_alpha": 0.0,
+  "learned_direction_kappa_scale": 2.0,
+  "learned_direction_flip_to_receiver_hemisphere": false,
+  "time_budget_seconds": 900,
+  "output_dir": "results/model_specific_kappa_sweep_macos_20260901/slabs_diffusion_seed155921_k200",
+  "methods": [
+    "path_reference",
+    "ordered_diffusion_mlp_h72_k4"
+  ]
+}

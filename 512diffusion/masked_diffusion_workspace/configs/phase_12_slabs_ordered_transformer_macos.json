@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/ordered_absorbing_pilot_macos_20260901/phase10/ordered_diffusion_transformer/best_general.pt",
+  "output_dir": "results/ordered_absorbing_pilot_macos_20260901/phase12/ordered_diffusion_transformer",
+  "output_name": "ordered_diffusion_transformer_runtime.txt"
+}

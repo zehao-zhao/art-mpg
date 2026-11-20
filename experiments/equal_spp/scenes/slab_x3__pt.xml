@@ -1,0 +1,108 @@
+<scene version="2.0.0">
+    <!-- Controlled chain-length variant derived from scenes/slabs/slabs_reproduce.xml. -->
+    <default name="imgwidth" value="64" />
+    <default name="imgheight" value="64" />
+    <default name="spp" value="60" />
+    <default name="max_depth" value="19" />
+    <default name="train_auto" value="false" />
+    <default name="guide" value="false" />
+    <default name="budget_is_time" value="false" />
+    <default name="timeout" value="0" />
+
+    <integrator type="path">
+		<integer name="max_depth" value="19" />
+	</integrator>
+
+    <shape type="obj" id="caustic_light">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/light.obj" />
+        <emitter type="area">
+            <spectrum name="radiance" value="300000" />
+            <boolean name="caustic_emitter_multi" value="true" />
+        </emitter>
+        <transform name="to_world"><scale x="0.33" /></transform>
+    </shape>
+
+    <!-- Three identical slabs at the original 0.5-unit spacing. -->
+    <shape type="obj" id="slab_1_front">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/plane_1.obj" />
+        <boolean name="caustic_caster_multi" value="true" />
+        <boolean name="caustic_bouncer" value="true" />
+        <bsdf type="dielectric"><float name="int_ior" value="1.5" /></bsdf>
+    </shape>
+    <shape type="obj" id="slab_1_back">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/plane_2.obj" />
+        <boolean name="caustic_bouncer" value="true" />
+        <bsdf type="dielectric"><float name="int_ior" value="1.5" /></bsdf>
+    </shape>
+    <shape type="obj" id="slab_1_border">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/planes_border.obj" />
+        <bsdf type="diffuse"><rgb name="reflectance" value="0.01, 0.01, 0.01" /></bsdf>
+    </shape>
+
+    <shape type="obj" id="slab_2_front">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/plane_1.obj" />
+        <boolean name="caustic_caster_multi" value="true" />
+        <boolean name="caustic_bouncer" value="true" />
+        <bsdf type="dielectric"><float name="int_ior" value="1.5" /></bsdf>
+        <transform name="to_world"><translate z="-0.5" /></transform>
+    </shape>
+    <shape type="obj" id="slab_2_back">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/plane_2.obj" />
+        <boolean name="caustic_bouncer" value="true" />
+        <bsdf type="dielectric"><float name="int_ior" value="1.5" /></bsdf>
+        <transform name="to_world"><translate z="-0.5" /></transform>
+    </shape>
+    <shape type="obj" id="slab_2_border">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/planes_border.obj" />
+        <bsdf type="diffuse"><rgb name="reflectance" value="0.01, 0.01, 0.01" /></bsdf>
+        <transform name="to_world"><translate z="-0.5" /></transform>
+    </shape>
+
+    <shape type="obj" id="slab_3_front">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/plane_1.obj" />
+        <boolean name="caustic_caster_multi" value="true" />
+        <boolean name="caustic_bouncer" value="true" />
+        <bsdf type="dielectric"><float name="int_ior" value="1.5" /></bsdf>
+        <transform name="to_world"><translate z="-1.0" /></transform>
+    </shape>
+    <shape type="obj" id="slab_3_back">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/plane_2.obj" />
+        <boolean name="caustic_bouncer" value="true" />
+        <bsdf type="dielectric"><float name="int_ior" value="1.5" /></bsdf>
+        <transform name="to_world"><translate z="-1.0" /></transform>
+    </shape>
+    <shape type="obj" id="slab_3_border">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/planes_border.obj" />
+        <bsdf type="diffuse"><rgb name="reflectance" value="0.01, 0.01, 0.01" /></bsdf>
+        <transform name="to_world"><translate z="-1.0" /></transform>
+    </shape>
+
+    <shape type="obj" id="receiver">
+        <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/meshes/floor.obj" />
+        <boolean name="caustic_receiver" value="true" />
+        <bsdf type="diffuse">
+            <spectrum name="reflectance" type="bitmap">
+                <string name="filename" value="${ARTMPG_ROOT}/512diffusion/scenes/slabs/textures/[2K]Wood30/Wood030_2K_Color.jpg" />
+                <transform name="to_uv"><scale x="3" y="3" /></transform>
+            </spectrum>
+        </bsdf>
+    </shape>
+
+    <sensor type="perspective">
+        <string name="fov_axis" value="smaller" />
+        <float name="fov" value="39.597752" />
+        <transform name="to_world">
+            <rotate x="0" y="1" z="0" angle="180" />
+            <rotate x="1" y="0" z="0" angle="-39.58" />
+            <rotate x="0" y="1" z="0" angle="57.07" />
+            <rotate x="0" y="0" z="1" angle="-0.73" />
+            <translate x="3.009096" y="3.606013" z="2.395111" />
+        </transform>
+        <sampler type="independent"><integer name="sample_count" value="60" /><integer name="seed" value="1668592294" /></sampler>
+        <film type="hdrfilm">
+            <integer name="width" value="64" />
+            <integer name="height" value="64" />
+            <rfilter type="gaussian" />
+        </film>
+    </sensor>
+</scene>

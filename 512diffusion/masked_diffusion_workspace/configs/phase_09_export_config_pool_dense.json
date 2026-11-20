@@ -1,0 +1,23 @@
+{
+  "profile_id": "linux_native",
+  "job_ids": [
+    "paper_pool_mpg"
+  ],
+  "seed_ids": [
+    6025
+  ],
+  "width": 64,
+  "height": 64,
+  "crop_width": 64,
+  "crop_height": 64,
+  "sample_count": 999999,
+  "samples_per_pass": 1,
+  "threads": 1,
+  "timeout_seconds": 30.0,
+  "train_budget": 15,
+  "train_fusion": true,
+  "guided": true,
+  "allow_partial_aggregate": true,
+  "min_successful_seeds": 1,
+  "min_aggregate_raw_samples": 16
+}

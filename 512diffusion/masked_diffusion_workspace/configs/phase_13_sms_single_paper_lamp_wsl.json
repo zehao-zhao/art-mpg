@@ -1,0 +1,26 @@
+{
+  "profile_id": "wsl_linux",
+  "job_ids": [
+    "paper_lamp_mpg"
+  ],
+  "width": 32,
+  "height": 32,
+  "crop_width": 32,
+  "crop_height": 32,
+  "reference_sample_count": 2,
+  "compare_sample_count": 1,
+  "samples_per_pass": 1,
+  "threads": 2,
+  "seed": 42,
+  "mpg_train_budget": 0.2,
+  "mpg_train_fusion": true,
+  "runtime_model_path": "results/phase_12_runtime_export/masked_diffusion_runtime.txt",
+  "runtime_model_paths": {
+    "paper_lamp_mpg": "results/phase_12_runtime_export_lamp_per_seed/masked_diffusion_runtime.txt"
+  },
+  "output_dir": "results/phase_13_sms_single_paper_lamp_wsl",
+  "methods": [
+    "path_reference",
+    "sms"
+  ]
+}

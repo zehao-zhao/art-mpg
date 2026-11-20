@@ -1,0 +1,5 @@
+{
+  "checkpoint_path": "results/architecture_pilot_macos_20260901/phase10/diffusion_mlp/best_general.pt",
+  "output_dir": "results/architecture_pilot_macos_20260901/phase12/diffusion_mlp",
+  "output_name": "diffusion_mlp_runtime.txt"
+}

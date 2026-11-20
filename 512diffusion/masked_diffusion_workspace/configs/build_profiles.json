@@ -1,0 +1,89 @@
+{
+  "profiles": [
+    {
+      "id": "windows_native",
+      "label": "Windows Native Build",
+      "command_mode": "native",
+      "host_platforms": ["windows"],
+      "target_platform": "windows",
+      "generator": "Ninja Multi-Config",
+      "build_dir": "mitsuba/build_windows_py312",
+      "python_mode": "host_python",
+      "python_executable": "",
+      "python_version_prefix": "3.12",
+      "build_config": "Release",
+      "required_tools": ["cmake", "ninja", "cl", "link", "rc", "mt", "vsdevcmd"],
+      "configure_args": [
+        "-DMTS_ENABLE_GUI=OFF",
+        "-DMTS_ENABLE_PYTHON=OFF",
+        "-DMTS_ENABLE_LTO=OFF",
+        "-DMTS_MPG_FAST_ITERATION=ON"
+      ],
+      "build_target": "dist-copy"
+    },
+    {
+      "id": "linux_native",
+      "label": "Linux Native Build",
+      "command_mode": "native",
+      "host_platforms": ["linux"],
+      "target_platform": "linux",
+      "generator": "Ninja",
+      "build_dir": "mitsuba/build_linux_py312",
+      "python_mode": "target_python",
+      "python_executable": "python3.12",
+      "python_version_prefix": "3.12",
+      "build_config": "",
+      "required_tools": ["cmake", "ninja", "python3.12", "c++"],
+      "configure_args": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DMTS_ENABLE_GUI=OFF",
+        "-DMTS_ENABLE_PYTHON=OFF",
+        "-DMTS_ENABLE_LTO=OFF"
+      ],
+      "build_target": "dist-copy"
+    },
+    {
+      "id": "macos_arm64_native",
+      "label": "macOS Apple Silicon Native Build",
+      "command_mode": "native",
+      "host_platforms": ["darwin"],
+      "target_platform": "darwin",
+      "generator": "Ninja",
+      "build_dir": "mitsuba/build_macos_arm64_py312",
+      "python_mode": "host_python",
+      "python_executable": "",
+      "python_version_prefix": "3.12",
+      "build_config": "",
+      "required_tools": ["cmake", "ninja", "c++"],
+      "configure_args": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_OSX_ARCHITECTURES=arm64",
+        "-DMTS_ENABLE_GUI=OFF",
+        "-DMTS_ENABLE_PYTHON=OFF",
+        "-DMTS_ENABLE_LTO=OFF"
+      ],
+      "build_target": "dist-copy"
+    },
+    {
+      "id": "wsl_linux",
+      "label": "WSL Linux Build",
+      "command_mode": "wsl",
+      "host_platforms": ["windows"],
+      "target_platform": "linux",
+      "generator": "Ninja",
+      "build_dir": "mitsuba/build_wsl_py312",
+      "python_mode": "target_python",
+      "python_executable": "python3.12",
+      "python_version_prefix": "3.12",
+      "build_config": "",
+      "required_tools": ["cmake", "ninja", "python3.12", "c++"],
+      "configure_args": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DMTS_ENABLE_GUI=OFF",
+        "-DMTS_ENABLE_PYTHON=OFF",
+        "-DMTS_ENABLE_LTO=OFF"
+      ],
+      "build_target": "dist-copy"
+    }
+  ]
+}

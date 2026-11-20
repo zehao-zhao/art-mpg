@@ -1,0 +1,29 @@
+{
+  "replay_paths": [
+    "results/phase_09_export/replay/paper_slabs_mpg.jsonl"
+  ],
+  "masked_diffusion_checkpoint": "results/ordered_absorbing_pilot_macos_20260901/phase10/ordered_diffusion_mlp/best_general.pt",
+  "output_dir": "results/ordered_absorbing_pilot_macos_20260901/phase11/simple_mlp",
+  "seed": 42,
+  "batch_size": 16,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 0,
+  "device": "auto",
+  "direction_loss_weight": 1.0,
+  "direction_loss_type": "vmf_mixture",
+  "direction_vmf_kappa": 1.0,
+  "diffusion_steps": 1,
+  "simple_baseline": {
+    "hidden_dim": 128,
+    "depth": 4,
+    "dropout": 0.1,
+    "epochs": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "grad_clip_norm": 0.5,
+    "probabilistic_direction": true,
+    "min_kappa": 0.001,
+    "max_kappa": 64.0
+  }
+}

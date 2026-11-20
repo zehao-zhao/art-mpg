@@ -1,0 +1,32 @@
+{
+  "replay_paths": [
+    "results/phase_09_export/replay/paper_slabs_mpg.jsonl"
+  ],
+  "output_dir": "results/ordered_absorbing_arch_sweep_macos_20260901/slabs_dit_h40_d2_k4_te16_drop0",
+  "seed": 42,
+  "batch_size": 16,
+  "epochs": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "val_fraction": 0.25,
+  "max_records": null,
+  "num_workers": 0,
+  "device": "auto",
+  "early_stop_patience": null,
+  "grad_clip_norm": 0.5,
+  "direction_loss_weight": 1.0,
+  "direction_loss_type": "vmf_mixture",
+  "direction_distribution": "vmf_mixture",
+  "vmf_components": 4,
+  "vmf_max_kappa": 64.0,
+  "direction_space": "s2",
+  "discrete_diffusion_mode": "ordered_absorbing",
+  "backbone_type": "dit",
+  "hidden_dim": 40,
+  "depth": 2,
+  "dropout": 0.0,
+  "time_embedding_dim": 16,
+  "token_embedding_dim": 16,
+  "transformer_heads": 4,
+  "transformer_feedforward_dim": 80
+}
