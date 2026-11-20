@@ -1,1 +1,35 @@
+# Local editor settings
 .vscode/
+.idea/
+/512diffusion/mitsuba/.clang-format
+*.swp
+*.swo
+*~
+
+# Operating-system metadata
+.DS_Store
+._*
+Thumbs.db
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Generated build and experiment outputs
+/work/
+/build/
+/dist/
+/512diffusion/masked_diffusion_workspace/results/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+.ninja_deps
+.ninja_log
+*.log
