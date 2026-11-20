@@ -14,9 +14,19 @@ python -B experiments/equal_time/build_timed_methods.py --base-build work/render
 
 The main renderer integrates the PPG delta-light/delta-BSDF MIS and guide consistency fixes, and the directional-emitter zero-PDF and direction fixes. The three timed kernels preserve the implementations and controls used for R1–R2, including their existing counter overhead. Their names are `art_joint`, `mpg`, `npm`. The joint kernel uses cached CDF/direction outputs, context spacing 0.25 and 4,096 local slots. `old_code/` holds only the exact v1 originals of the three replaced renderer files, with package-relative paths; it is not built or imported.
 
-## Original paper code
+## Code Structure
 
-Renderer, scene and model workspace code remains at its original `512diffusion/` location, including the original paper experiment/ablation scripts and configs. Paper training configs and recorded model/seed bindings are in `recorded_experiments/`. Descriptive entry points under `models/` and `experiments/` are additional reproduction interfaces.
+| Directory | Purpose |
+|---|---|
+| `512diffusion/mitsuba/` | C++ renderer, path-guiding integrators, and bundled build dependencies. |
+| `512diffusion/scenes/` | Scene descriptions, meshes, textures, and materials used by the experiments. |
+| `512diffusion/masked_diffusion_workspace/` | Model-training, evaluation, and ablation scripts with their configurations. |
+| `models/` | ART-MPG and NPM model implementations, training configurations, and training/export commands. |
+| `model_exports/` | Renderer-ready ART-MPG model exports for the paper and joint R/T exports for equal-time experiments. |
+| `experiments/equal_spp/` | Runs comparisons at equal samples per pixel and generates tables and figures. |
+| `experiments/equal_time/` | Builds timed renderer variants, trains comparison models, runs equal-time comparisons, and generates Tables R1–R2. |
+| `recorded_experiments/` | Paper training configurations, recorded render/model-seed bindings, and model-export path mappings. |
+| `old_code/` | Renderer source snapshots kept for reference and excluded from the build. |
 
 ## Inputs and models
 
